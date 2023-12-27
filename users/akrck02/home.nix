@@ -1,5 +1,5 @@
-# users/ana/home.nix
-{ }:
+# users/akrck02/home.nix
+{ config, pkgs, lib, ... }:
 
 {
   home.username = "akrck02";

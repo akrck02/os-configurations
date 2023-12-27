@@ -19,8 +19,7 @@
       gnome-characters
       gnome-contacts
       gnome-initial-setup
-      gnome-photos
-      gnome-secrets
+     
     ]);
 
 
@@ -62,6 +61,8 @@
       chromium
       spotify
       obs-studio
+      gnome-secrets
+      gnome-photos
     ];
 
     services.printing.enable = true;

@@ -33,5 +33,11 @@
       adjtime.source = "/persist/etc/adjtime";
       machine-id.source = "/persist/etc/machine-id";
     };
+
+    boot.loader.systemd-boot.enable = true;
+    boot.loader.systemd-boot.editor = true;
+    boot.loader.efi.efiSysMountPoint = "/efi";
+    boot.initrd.systemd.enable = true;
+
   };
 }
