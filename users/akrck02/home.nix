@@ -17,7 +17,7 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;
-  }
+  };
 
   gtk = {
     enable = true;
@@ -48,7 +48,7 @@
         gtk-application-prefer-dark-theme=1
       '';
     };
-   }
+   };
 
    home.sessionVariables.GTK_THEME = "palenight";
 
