@@ -22,9 +22,6 @@
 
     environment.systemPackages = with pkgs; [
       # Shell utilities
-      patchelf
-      direnv
-      nix-direnv
       git
       htop
       neofetch

@@ -19,7 +19,6 @@
       gnome-characters
       gnome-contacts
       gnome-initial-setup
-     
     ]);
 
 
@@ -32,8 +31,8 @@
     #hardware.xpadneo.enable = true;
 
     fonts.fontconfig.enable = true;
-    fonts.enableDefaultFonts = true;
-    fonts.fonts = with pkgs; [
+    fonts.enableDefaultPackages = true;
+    fonts.packages = with pkgs; [
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
@@ -47,9 +46,6 @@
     # These should only be GUI applications that are desired systemwide
     environment.systemPackages = with pkgs; [
       vscode
-      firefox
-      telegram-desktop 
-      godot_4
       docker 
       go 
       nano
@@ -57,12 +53,14 @@
       gimp
       gnome.gnome-tweaks
       gnome.gnome-characters
-      kicad
       chromium
       spotify
       obs-studio
       gnome-secrets
       gnome-photos
+      godot_4
+      telegram-desktop 
+      firefox
     ];
 
     services.printing.enable = true;

@@ -11,7 +11,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager }:
+  outputs = { self, nixpkgs, home-manager}:
   let 
     supportedSystems = [ "x86_64-linux"];
     forAllSystems = f: nixpkgs.lib.genAttrs supportedSystems (system: f system);

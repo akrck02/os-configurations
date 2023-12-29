@@ -4,6 +4,10 @@
 {
   home.username = "akrck02";
   home.homeDirectory = "/home/akrck02";
+  home.packages =  with pkgs; [
+    
+  ];
+
   # ...
   programs.home-manager.enable = true;
   home.stateVersion = "22.05";
@@ -61,6 +65,7 @@
         "org.gnome.Terminal.desktop"
         "spotify.desktop"
         "org.gnome.Nautilus.desktop"
+        "org.telegram.desktop"
       ];
     };
     "org/gnome/desktop/interface" = {
