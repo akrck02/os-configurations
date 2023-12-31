@@ -32,12 +32,12 @@
     };
 
     theme = {
-      name = "palenight";
+      name = "Adwaita-dark";
       package = pkgs.palenight-theme;
     };
 
     cursorTheme = {
-      name = "Numix-Cursor";
+      name = "Adwaita";
       package = pkgs.numix-cursor-theme;
     };
 
@@ -54,18 +54,19 @@
     };
    };
 
-   home.sessionVariables.GTK_THEME = "palenight";
+   home.sessionVariables.GTK_THEME = "Adwaita-dark";
 
   # Use `dconf watch /` to track stateful changes you are doing, then set them here.
   dconf.settings = {
     "org/gnome/shell" = {
       favorite-apps = [
+        "org.gnome.Nautilus.desktop"
+        "org.gnome.Console.desktop"
         "firefox.desktop"
         "code.desktop"
-        "org.gnome.Terminal.desktop"
+        "org.godotengine.Godot4.desktop"
+        "org.telegram.desktop.desktop"
         "spotify.desktop"
-        "org.gnome.Nautilus.desktop"
-        "org.telegram.desktop"
       ];
     };
     "org/gnome/desktop/interface" = {

@@ -9,16 +9,20 @@
     services.xserver.displayManager.gdm.enable = true;
     services.xserver.displayManager.autoLogin.enable = false;
     services.xserver.desktopManager.gnome.enable = true;
-    environment.gnome.excludePackages = (with pkgs; [
-      gnome-tour
+    environment.gnome.excludePackages = (with pkgs; [     
     ]) ++ (with pkgs.gnome; [
-      cheese 
       gnome-music
       gedit 
       geary 
       gnome-characters
       gnome-contacts
-      gnome-initial-setup
+      gnome-maps
+      gnome-logs 
+      seahorse
+      totem
+      eog    
+      epiphany
+      yelp
     ]);
 
 
@@ -59,8 +63,11 @@
       gnome-secrets
       gnome-photos
       godot_4
+      pixelorama
       telegram-desktop 
       firefox
+      lmms
+      audacity
     ];
 
     services.printing.enable = true;
