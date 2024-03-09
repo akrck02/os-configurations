@@ -1,4 +1,4 @@
-myhosts:
+homelab:
   hosts:
     slimbook_executive_16:
-      ansible_host: 192.168.211.168
+      ansible_host: localhost
