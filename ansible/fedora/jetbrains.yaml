@@ -1,0 +1,13 @@
+- name: docker-vscode-playbook
+  hosts: workstation
+  become: yes
+  roles:
+    - ansible-role-install-flatpak
+  tasks:
+  - name: install vscode
+    dnf:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - com.jetbrains.IntelliJ-IDEA-Community
+

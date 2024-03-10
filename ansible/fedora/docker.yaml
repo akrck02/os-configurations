@@ -1,0 +1,38 @@
+- name: docker-fedora-playbook
+  hosts: workstation
+  become: yes
+  tasks:
+  - name: make sure dnf-plugins.core installed
+    dnf:
+      name: dnf-plugins-core
+      state: present
+
+  - name: install docker repository
+    command: dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+
+  - name: make sure docker from distro (dnf) is not installed
+    yum:
+      name: "{{ item }}"
+      state: absent
+    with_items:
+      - docker
+      - docker-client
+      - docker-client-latest
+      - docker-common
+      - docker-latest
+      - docker-latest-logrotate
+      - docker-logrotate
+      - docker-selinux
+      - docker-engine-selinux
+      - docker-engine
+
+  - name: install docker
+    dnf:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-compose-plugin

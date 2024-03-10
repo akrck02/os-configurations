@@ -1,4 +1,0 @@
-homelab:
-  hosts:
-    slimbook_executive_16:
-      ansible_host: localhost

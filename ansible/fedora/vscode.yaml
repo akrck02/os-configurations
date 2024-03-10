@@ -1,0 +1,22 @@
+- name: docker-vscode-playbook
+  hosts: workstation
+  become: yes
+  vars:
+    microsoft_gpg_key: https://packages.microsoft.com/keys/microsoft.asc
+
+  tasks:
+  - name: importing (free) key
+    ansible.builtin.rpm_key:
+      state: present
+      key: "{{ microsoft_gpg_key }}"
+
+  - name: Add vscode to yum.
+    shell: echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo
+
+  - name: install vscode
+    dnf:
+      name: "{{ item }}"
+      state: present
+    with_items:
+      - code
+
