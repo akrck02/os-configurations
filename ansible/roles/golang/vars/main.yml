@@ -1,0 +1,2 @@
+golang_file: go{{ golang_version }}.{{ golang_os }}-{{ golang_arch }}.tar.gz
+golang_download_url: https://golang.org/dl/{{ golang_file }}

@@ -1,0 +1,10 @@
+vscode_microsoft_gpg_key: https://packages.microsoft.com/keys/microsoft.asc
+vscode_yum_repo: https://packages.microsoft.com/yumrepos/vscode
+vscode_yum_path: /etc/yum.repos.d/vscode.repo
+vscode_yum_path_content: |
+  [code]
+  name=Visual Studio Code
+  baseurl={{ vscode_yum_repo }}
+  enabled=1
+  gpgcheck=1
+  gpgkey={{ vscode_microsoft_gpg_key }}

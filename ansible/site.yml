@@ -1,0 +1,11 @@
+# This Playbook would ping all the hosts in the inventory file
+- name: Ping all hosts
+  hosts: all
+  tasks:
+    - name: Ping all hosts
+      ansible.builtin.ping:
+      register: ping_result
+
+    - name: Display ping results
+      ansible.builtin.debug:
+        var: ping_result

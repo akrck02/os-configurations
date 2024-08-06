@@ -1,0 +1,16 @@
+workstation:
+  hosts:
+    slimbook_executive_16:
+      ansible_host: slimbook-executive-16
+    haruhi:
+      ansible_host: haruhi
+
+homelab:
+  hosts:
+    fuyu:
+      ansible_host: fuyu
+        
+test:
+  hosts:
+    kodai:
+      ansible_host: 192.168.50.238
