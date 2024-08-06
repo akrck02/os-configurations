@@ -1,0 +1,17 @@
+- name: Check if flatpak is installed
+  ansible.builtin.command: flatpak --version
+  register: flatpak_version
+  ignore_errors: true
+  changed_when: false
+
+- name: Install flatpak
+  ansible.builtin.dnf:
+    name: flatpak
+    state: present
+  when: flatpak_version.rc != 0
+
+- name: Install godot via flatpak
+  comumunity.general.flatpak:
+    name: org.godotengine.Godot
+    state: present
+  tags: godot

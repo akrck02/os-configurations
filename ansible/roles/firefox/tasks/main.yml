@@ -1,0 +1,5 @@
+- name: Install firefox via dnf
+  ansible.builtin.dnf:
+    name: firefox
+    state: present
+  tags: firefox
