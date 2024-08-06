@@ -1,0 +1,15 @@
+- name: Install tailscale via dnf
+  ansible.builtin.dnf:
+    name: tailscale
+    state: present
+  tags: tailscale
+
+- name: Start tailscale
+  ansible.builtin.command: tailscale up
+  tags: tailscale
+  changed_when: false
+
+- name: Display tailscale status
+  ansible.builtin.command: tailscale status
+  tags: tailscale
+  changed_when: false

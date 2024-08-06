@@ -1,49 +1,9 @@
-- name: Make sure dnf-plugins.core installed
-  ansible.builtin.dnf:
-    name: dnf-plugins-core
-    state: present
+- name: Debian | Include OS specific tasks
+  ansible.builtin.include_tasks: debian.yml
+  when: ansible_os_family == 'Debian'
+  tags: package
 
-- name: Install docker repository
-  ansible.builtin.command:
-    cmd: dnf config-manager --add-repo {{ docker_repository }}
-    creates: /etc/yum.repos.d/docker-ce.repo
-
-- name: Make sure docker from distro (dnf) is not installed
-  ansible.builtin.yum:
-    name: "{{ item }}"
-    state: absent
-  with_items:
-    - docker
-    - docker-client
-    - docker-client-latest
-    - docker-common
-    - docker-latest
-    - docker-latest-logrotate
-    - docker-logrotate
-    - docker-selinux
-    - docker-engine-selinux
-    - docker-engine
-
-- name: Install docker
-  ansible.builtin.dnf:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - docker-ce
-    - docker-ce-cli
-    - containerd.io
-    - docker-buildx-plugin
-    - docker-compose-plugin
-
-- name: Start and enable docker
-  ansible.builtin.systemd:
-    name: docker
-    enabled: true
-    state: started
-
-- name: Add user to docker group
-  ansible.builtin.user:
-    name: "{{ ansible_user }}"
-    groups: docker
-    append: true
-  when: ansible_user != 'root'
+- name: RedHat | Include OS specific tasks
+  ansible.builtin.include_tasks: redhat.yml
+  when: ansible_os_family == 'RedHat'
+  tags: package
