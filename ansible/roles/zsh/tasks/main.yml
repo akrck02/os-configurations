@@ -1,0 +1,22 @@
+- name: Set zsh as default shell
+  ansible.builtin.user:
+    name: '{{ username }}'
+    shell: /bin/zsh
+
+- name: Set zsh as default shell for ansible_user
+  ansible.builtin.command: chsh -s /bin/zsh '{{ item }}'
+  with_items: "{{ ansible_user }}"
+  when: ansible_user != username
+  check_mode: false
+
+- name: Download Oh My Zsh installation script
+  ansible.builtin.get_url:
+    url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    dest: /tmp/install_ohmyzsh.sh
+    mode: '0755'
+
+- name: Run Oh My Zsh installation script
+  ansible.builtin.command: zsh /tmp/install_ohmyzsh.sh --unattended
+  register: ohmyzsh_result
+  failed_when: "'FAILED' in ohmyzsh_result.stderr"
+  changed_when: ohmyzsh_result.rc == 0

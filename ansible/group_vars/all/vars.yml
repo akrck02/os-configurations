@@ -1,0 +1,10 @@
+username: akrck02
+packages:
+    - nano
+    - git
+    - curl
+    - wget
+    - zsh
+    - htop  
+    - neofetch
+

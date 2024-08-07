@@ -1,11 +1,12 @@
-# This Playbook would ping all the hosts in the inventory file
-- name: Ping all hosts
-  hosts: all
+- name: Setup essential packages
+  hosts: test
+  become: true
+  roles:
+    - update
+    - zsh
   tasks:
-    - name: Ping all hosts
-      ansible.builtin.ping:
-      register: ping_result
-
-    - name: Display ping results
-      ansible.builtin.debug:
-        var: ping_result
+    - name: Import essential tasks
+      ansible.builtin.import_tasks: tasks/essential.yml
+  handlers:
+    - name: Import essential handlers
+      ansible.builtin.import_tasks: handlers/essential.yml

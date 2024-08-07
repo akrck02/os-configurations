@@ -1,6 +1,9 @@
 {
     "ansible.python.interpreterPath": "/bin/python3.12",
     "yaml.schemas": {
-        "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/tasks": "file:///home/dev/code/akrck02/Linux-configurations/ansible/roles/docker/tasks/debian.yml"
+        "https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/tasks": [
+            "file:///home/dev/code/akrck02/Linux-configurations/ansible/roles/docker/tasks/debian.yml",
+            "file:///home/dev/code/akrck02/Linux-configurations/ansible/tasks/essential.yml"
+        ]
     }
 }
