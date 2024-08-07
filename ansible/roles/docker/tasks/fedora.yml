@@ -47,3 +47,9 @@
     groups: docker
     append: true
   when: ansible_user != 'root'
+
+- name: Test docker
+  ansible.builtin.command: docker --version
+  register: docker_version
+  changed_when: false
+  failed_when: false

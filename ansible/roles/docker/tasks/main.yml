@@ -3,7 +3,7 @@
   when: ansible_os_family == 'Debian'
   tags: package
 
-- name: RedHat | Include OS specific tasks
-  ansible.builtin.include_tasks: redhat.yml
+- name: Fedora | Include OS specific tasks
+  ansible.builtin.include_tasks: fedora.yml
   when: ansible_os_family == 'RedHat'
   tags: package

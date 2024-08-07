@@ -1,0 +1,2 @@
+docker_debian_signed_by: /etc/apt/keyrings/docker.asc
+docker_repository: https://download.docker.com/linux/debian
