@@ -1,86 +1,74 @@
-# flake.nix
 {
+  # Metadata of the flake
+  description = "Akrck02's machines configurations flake";
 
-  description = "Akrck02's development machine flake";
-
+  # Inputs for the flake
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
+    # Nix packages
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
+    # Home manager
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Stylix
+    # stylix = {
+    #   url = "github:danth/stylix/master";
+    #   inputs = {
+    #     nixpkgs.follows = "nixpkgs";
+    #     home-manager.follows = "home-manager";
+    #     git-hooks.follows = "pre-commit-hooks-nix";
+    #     flake-utils.follows = "flake-utils";
+    #   };
+    # };
   };
 
-  outputs = { self, nixpkgs, home-manager }:
-  let
-    supportedSystems = [ "x86_64-linux"];
-    forAllSystems = f: nixpkgs.lib.genAttrs supportedSystems (system: f system);
-  in {
+  # Outputs of the flake
+  outputs = { self, nixpkgs, ... }@inputs: {
 
-    homeConfigurations = forAllSystems
-      (system:
-        let
-          pkgs = import nixpkgs {
-            inherit system;
-            overlays = [ self.overlays.default ];
-          };
-        in
-        {
-          akrck02 = home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-            modules = [
-              ./users/akrck02/home.nix
-            ];
-          };
-        }
-      );
+      # homeManagerModules.default = ./modules/home-manager;
+      nixosConfigurations = {
 
-    nixosModules = {
-      # Traits
-      traits.base = ./traits/base.nix;
-      traits.machine = ./traits/machine.nix;
-      traits.gaming = ./traits/gaming.nix;
-      traits.hardened = ./traits/hardened.nix;
-      traits.desktop-gnome = ./traits/desktop-gnome.nix;
-      traits.workstation-dev = ./traits/workstation-dev.nix;
-      traits.workstation-media = ./traits/workstation-media.nix;
-
-       # Services
-      services.openssh = ./services/openssh.nix;
-      services.zsh = ./services/zsh.nix;
-
-      # Users
-      users.akrck02 = ./users/akrck02/system.nix;
-
-      # Platforms
-      platforms.slimbook-executive-16 = ./platforms/slimbook-executive-16.nix;
-    };
-
-    nixosConfigurations =
-      let
-        x86_64Base = {
+        # Workstations
+        slimbook-executive-16 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = with self.nixosModules; [
-            ({ config = { nix.registry.nixpkgs.flake = nixpkgs; }; })
-            home-manager.nixosModules.home-manager
-            traits.base
-            services.openssh
-	    services.zsh
+          specialArgs = {inherit inputs;};
+          modules = [
+            ./hosts/workstations/slimbook-executive-16/slimbook-executive-16.nix
+            inputs.home-manager.nixosModules.default
           ];
         };
-      in
-      with self.nixosModules; {
-        x86_64-dev-slimbook-executive-16 = nixpkgs.lib.nixosSystem {
-          inherit (x86_64Base) system;
-          modules = x86_64Base.modules ++ [
-            platforms.slimbook-executive-16
-            traits.machine
-	    traits.desktop-gnome
-            traits.workstation-dev
-            traits.workstation-media
-            traits.hardened
-            users.akrck02
-          ];
+
+        nixosConfigurations.haruhi = nixpkgs.lib.nixosSystem {
+           system = "x86_64-linux";
+           specialArgs = {inherit inputs;};
+           modules = [
+             # ./hardware/workstations/haruhi/default.nix
+             inputs.home-manager.nixosModules.default
+           ];
+        };
+
+        # Servers
+        nixosConfigurations.fuyu = nixpkgs.lib.nixosSystem {
+           system = "x86_64-linux";
+           specialArgs = {inherit inputs;};
+           modules = [
+             # ./hardware/servers/fuyu/default.nix
+             inputs.home-manager.nixosModules.default
+           ];
+        };
+
+        nixosConfigurations.yoga = nixpkgs.lib.nixosSystem {
+           system = "x86_64-linux";
+           specialArgs = {inherit inputs;};
+           modules = [
+             # ./hardware/servers/yoga/default.nix
+             inputs.home-manager.nixosModules.default
+           ];
         };
       };
   };
