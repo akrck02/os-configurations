@@ -24,6 +24,7 @@
      ## Social media apps
      ../modules/home-manager/social-media/telegram.nix
      ../modules/home-manager/social-media/discord.nix
+     ../modules/home-manager/social-media/slack.nix
 
      ## Terminal apps
      ../modules/home-manager/terminal/ghostty.nix
@@ -39,31 +40,26 @@
     ## Basic dnconf configuration
     dconf.settings = {
         "org/gnome/desktop/interface" = {
-            color-scheme = "prefer-dark";
-            cursor-theme = "Adwaita";
-            enable-hot-corners = true;
-            icon-theme = "Papirus-Dark";
-            gtk-theme = "Adwaita-dark";
-            show-battery-percentage = true;
-        };
-
-        "org/gnome/mutter" = {
-            dynamic-workspaces = true;
-            edge-tiling = true;
+            accent-color = "blue";
         };
 
         "org/gnome/shell" = {
             favorite-apps = [
-              "org.gnome.Nautilus.desktop"
-              "org.gnome.Console.desktop"
-              "firefox.desktop"
-              "spotify.desktop"
+                "org.gnome.Nautilus.desktop"
+                "com.mitchellh.ghostty.desktop"
+                "firefox.desktop"
+                "spotify.desktop"
+                "idea-community.desktop"
+                "android-studio.desktop"
+            ];
+            disable-user-extensions = false;
+            enabled-extensions = with pkgs.gnomeExtensions; [
+              blur-my-shell.extensionUuid
             ];
         };
-
         # "org/gnome/desktop/background" = {
         #     picture-uri = "file://etc/nixos/resources/images/akrck02-wallpaper.jpg";
         # };
       };
-   };
+    };
 }

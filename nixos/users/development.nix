@@ -28,6 +28,9 @@
      ## Terminal apps
      ../modules/home-manager/terminal/ghostty.nix
 
+     ## Desktop options
+     ../modules/home-manager/desktop/gnome.nix
+
    ];
 
    config = {
@@ -43,30 +46,10 @@
         userEmail = "aketza.vazquez@gmail.com";
     };
 
-    ## GTK
-    gtk.enable = true;
-    gtk.iconTheme.package = lib.mkForce pkgs.papirus-icon-theme;
-    gtk.iconTheme.name = lib.mkForce "Papirus-Dark";
-
     ## Basic dnconf configuration
     dconf.settings = {
         "org/gnome/desktop/interface" = {
-            color-scheme = "prefer-dark";
-            cursor-theme = "Adwaita";
-            enable-hot-corners = true;
             accent-color = "teal";
-            icon-theme = "Papirus-Dark";
-            gtk-theme = "Adwaita-dark";
-            show-battery-percentage = true;
-        };
-
-        "org/gnome/mutter" = {
-            dynamic-workspaces = true;
-            edge-tiling = true;
-        };
-
-        "org/gnome/desktop/app-folders/folders/myfolder" = {
-          apps = ["org.telegram.desktop.desktop"];
         };
 
         "org/gnome/shell" = {
@@ -83,8 +66,6 @@
               blur-my-shell.extensionUuid
             ];
         };
-
-        "org/gnome/desktop/wm/preferences".button-layout = ":minimize,maximize,close";
 
         # "org/gnome/desktop/background" = {
         #     picture-uri = "file://etc/nixos/resources/images/akrck02-wallpaper.jpg";
