@@ -3,6 +3,12 @@
    ## Modules to import
    imports = [
 
+     ## Development apps
+     ../modules/home-manager/development/code/jetbrains/intellij.nix
+     ../modules/home-manager/development/code/jetbrains/android-studio.nix
+     ../modules/home-manager/development/code/neovim/neovim.nix
+     ../modules/home-manager/development/code/zed/zed.nix
+
      ## Internet apps
      ../modules/home-manager/internet-browse/firefox.nix
 
@@ -18,6 +24,9 @@
      ## Social media apps
      ../modules/home-manager/social-media/telegram.nix
      ../modules/home-manager/social-media/discord.nix
+
+     ## Terminal apps
+     ../modules/home-manager/terminal/ghostty.nix
    ];
 
    ## Configuration

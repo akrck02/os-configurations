@@ -21,6 +21,7 @@
         home = "/home/development";
         initialPassword = "12345";
         description = "development";
+        shell = pkgs.zsh;
         createHome = true;
         extraGroups = [ "networkmanager" "wheel" ];
         openssh.authorizedKeys.keys = [];
@@ -32,6 +33,7 @@
         isNormalUser = true;
         home = "/home/work";
         initialPassword = "12345";
+        shell = pkgs.zsh;
         description = "work";
         createHome = true;
         extraGroups = [ "networkmanager" "wheel" ];
@@ -44,6 +46,7 @@
         isNormalUser = true;
         home = "/home/media";
         initialPassword = "12345";
+        shell = pkgs.zsh;
         description = "media";
         createHome = true;
         extraGroups = [ "networkmanager" "wheel" ];

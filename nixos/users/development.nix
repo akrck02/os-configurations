@@ -1,4 +1,4 @@
- { pkgs, config, ... }: {
+ { lib, pkgs, config, ... }: {
 
    ## Modules to import
    imports = [
@@ -32,7 +32,6 @@
 
    config = {
 
-
     # The state version is required and should stay at the version you
     # originally installed.
     home.stateVersion = "24.11";
@@ -43,8 +42,11 @@
         userName = "akrck02";
         userEmail = "aketza.vazquez@gmail.com";
     };
-    
-    programs.firefox.enable = true;
+
+    ## GTK
+    gtk.enable = true;
+    gtk.iconTheme.package = lib.mkForce pkgs.papirus-icon-theme;
+    gtk.iconTheme.name = lib.mkForce "Papirus Dark";
 
     ## Basic dnconf configuration
     dconf.settings = {
@@ -52,7 +54,7 @@
             color-scheme = "prefer-dark";
             cursor-theme = "Adwaita";
             enable-hot-corners = true;
-            icon-theme = "Papirus-Dark";
+            icon-theme = "Papirus Dark";
             gtk-theme = "Adwaita-dark";
             show-battery-percentage = true;
         };
@@ -65,6 +67,7 @@
         "org/gnome/shell" = {
             favorite-apps = [
                 "org.gnome.Nautilus.desktop"
+                "ghostty.desktop"
                 "org.gnome.Console.desktop"
                 "firefox.desktop"
                 "org.telegram.desktop.desktop"
