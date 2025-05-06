@@ -15,7 +15,10 @@
     home-manager.useGlobalPkgs = true;
     home-manager.backupFileExtension = "back";
 
-    environment.systemPackages = with pkgs; [papirus-icon-theme];
+    environment.systemPackages = with pkgs; [
+      papirus-icon-theme
+      gnomeExtensions.blur-my-shell
+    ];
 
     # Development user
     users.users.development = {

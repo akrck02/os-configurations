@@ -78,7 +78,13 @@
                 "idea-community.desktop"
                 "android-studio.desktop"
             ];
+            disable-user-extensions = false;
+            enabled-extensions = with pkgs.gnomeExtensions; [
+              blur-my-shell.extensionUuid
+            ];
         };
+
+        "org/gnome/desktop/wm/preferences".button-layout = ":minimize,maximize,close";
 
         # "org/gnome/desktop/background" = {
         #     picture-uri = "file://etc/nixos/resources/images/akrck02-wallpaper.jpg";
