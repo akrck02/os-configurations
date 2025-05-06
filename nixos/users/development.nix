@@ -9,6 +9,11 @@
      ../modules/home-manager/development/code/neovim/neovim.nix
      ../modules/home-manager/development/code/zed/zed.nix
 
+     ../modules/home-manager/development/databases/visual/dbeaver.nix
+
+     ../modules/home-manager/development/network/bruno.nix
+     ../modules/home-manager/development/network/openvpn.nix
+
      ## Internet apps
      ../modules/home-manager/internet-browse/firefox.nix
 

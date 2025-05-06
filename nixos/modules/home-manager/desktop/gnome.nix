@@ -11,7 +11,6 @@
            color-scheme = "prefer-dark";
            cursor-theme = "Adwaita";
            enable-hot-corners = true;
-           accent-color = "teal";
            icon-theme = "Papirus-Dark";
            gtk-theme = "Adwaita-dark";
            show-battery-percentage = true;
