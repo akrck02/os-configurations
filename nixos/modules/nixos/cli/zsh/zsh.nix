@@ -20,7 +20,8 @@
     # '';
     ohMyZsh = {
         enable = true;
-        plugins = [ "git" "dirhistory" "history" ];
+        theme = "robbyrussell";
+        plugins = [ "sudo" "docker" "git" "dirhistory" "history" ];
     };
   };
 }
