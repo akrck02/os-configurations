@@ -46,7 +46,7 @@
     ## GTK
     gtk.enable = true;
     gtk.iconTheme.package = lib.mkForce pkgs.papirus-icon-theme;
-    gtk.iconTheme.name = lib.mkForce "Papirus Dark";
+    gtk.iconTheme.name = lib.mkForce "Papirus-Dark";
 
     ## Basic dnconf configuration
     dconf.settings = {
@@ -54,7 +54,8 @@
             color-scheme = "prefer-dark";
             cursor-theme = "Adwaita";
             enable-hot-corners = true;
-            icon-theme = "Papirus Dark";
+            accent-color = "teal";
+            icon-theme = "Papirus-Dark";
             gtk-theme = "Adwaita-dark";
             show-battery-percentage = true;
         };
@@ -64,14 +65,18 @@
             edge-tiling = true;
         };
 
+        "org/gnome/desktop/app-folders/folders/myfolder" = {
+          apps = ["org.telegram.desktop.desktop"];
+        };
+
         "org/gnome/shell" = {
             favorite-apps = [
                 "org.gnome.Nautilus.desktop"
-                "ghostty.desktop"
-                "org.gnome.Console.desktop"
+                "com.mitchellh.ghostty.desktop"
                 "firefox.desktop"
-                "org.telegram.desktop.desktop"
                 "spotify.desktop"
+                "idea-community.desktop"
+                "android-studio.desktop"
             ];
         };
 

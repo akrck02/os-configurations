@@ -15,6 +15,8 @@
     home-manager.useGlobalPkgs = true;
     home-manager.backupFileExtension = "back";
 
+    environment.systemPackages = with pkgs; [papirus-icon-theme];
+
     # Development user
     users.users.development = {
         isNormalUser = true;
@@ -23,7 +25,7 @@
         description = "development";
         shell = pkgs.zsh;
         createHome = true;
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" "docker" ];
         openssh.authorizedKeys.keys = [];
     };
     home-manager.users.development = import ../users/development.nix;
@@ -36,7 +38,7 @@
         shell = pkgs.zsh;
         description = "work";
         createHome = true;
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" "docker" ];
         openssh.authorizedKeys.keys = [];
     };
     home-manager.users.work = import ../users/work.nix;
