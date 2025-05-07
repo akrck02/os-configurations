@@ -1,4 +1,4 @@
- { inputs, lib, pkgs, config, ... }: {
+ { pkgs, ... }: {
 
    ## Modules to import
    imports = [
@@ -72,7 +72,7 @@
             favorite-apps = [
                 "org.gnome.Nautilus.desktop"
                 "com.mitchellh.ghostty.desktop"
-                "firefox.desktop"
+                "zen.desktop"
                 "spotify.desktop"
                 "idea-community.desktop"
                 "android-studio.desktop"
