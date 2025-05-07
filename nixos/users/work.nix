@@ -46,6 +46,12 @@
     # originally installed.
     home.stateVersion = "24.11";
 
+    ## Neovim
+    home.file.".config/nvim" = {
+        source = ../dotfiles/.nvim;
+        recursive = true;
+    };
+
     ## Basic dnconf configuration
     dconf.settings = {
         "org/gnome/desktop/interface" = {
