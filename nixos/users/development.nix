@@ -78,6 +78,17 @@
             ];
         };
 
+        "org/gnome/shell/extensions/blur-my-shell/applications" = {
+          blur=true;
+          blur-on-overview=false;
+          brightness=1.0;
+          dynamic-opacity=false;
+          enable-all=false;
+          opacity=215;
+          sigma=30;
+          whitelist=["org.gnome.Nautilus" "com.mitchellh.ghostty" "dev.zed.Zed"];
+        };
+
         # "org/gnome/desktop/background" = {
         #     picture-uri = "file://etc/nixos/resources/images/akrck02-wallpaper.jpg";
         # };
