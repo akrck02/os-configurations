@@ -57,6 +57,11 @@
         recursive = true;
     };
 
+    ## Wallpaper
+    home.file."Pictures/wallpaper.jpg" = {
+        source = ../dotfiles/wallpapers/development.jpg;
+    };
+
     ## Basic dnconf configuration
     dconf.settings = {
         "org/gnome/desktop/interface" = {
@@ -89,9 +94,10 @@
           whitelist=["org.gnome.Nautilus" "com.mitchellh.ghostty" "dev.zed.Zed"];
         };
 
-        # "org/gnome/desktop/background" = {
-        #     picture-uri = "file://etc/nixos/resources/images/akrck02-wallpaper.jpg";
-        # };
+        "org/gnome/desktop/background" = {
+            picture-uri = "file:///home/development/Pictures/wallpaper.jpg";
+            picture-uri-dark = "file:///home/development/Pictures/wallpaper.jpg";
+        };
       };
    };
 }
