@@ -4,7 +4,7 @@
    imports = [
 
      ## Internet apps
-     ../modules/home-manager/internet-browse/firefox.nix
+     ../modules/home-manager/internet-browse/zen.nix
 
      ## Media consumption apps
      ../modules/home-manager/media-consumption/spotify.nix

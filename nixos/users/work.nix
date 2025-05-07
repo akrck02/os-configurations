@@ -4,10 +4,10 @@
    imports = [
 
      ## Development apps
-     ../modules/home-manager/development/code/jetbrains/intellij.nix
-     ../modules/home-manager/development/code/jetbrains/android-studio.nix
-     ../modules/home-manager/development/code/neovim/neovim.nix
-     ../modules/home-manager/development/code/zed/zed.nix
+     ../modules/home-manager/development/code/intellij.nix
+     ../modules/home-manager/development/code/android-studio.nix
+     ../modules/home-manager/development/code/neovim.nix
+     ../modules/home-manager/development/code/zed.nix
 
      ../modules/home-manager/development/databases/sql/mariadb-11.4.nix
      ../modules/home-manager/development/databases/visual/dbeaver.nix
@@ -16,7 +16,7 @@
      ../modules/home-manager/development/network/openvpn.nix
 
      ## Internet apps
-     ../modules/home-manager/internet-browse/firefox.nix
+     ../modules/home-manager/internet-browse/zen.nix
 
      ## Media consumption apps
      ../modules/home-manager/media-consumption/spotify.nix

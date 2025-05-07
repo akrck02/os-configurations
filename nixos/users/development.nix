@@ -1,13 +1,13 @@
- { lib, pkgs, config, ... }: {
+ { inputs, lib, pkgs, config, ... }: {
 
    ## Modules to import
    imports = [
 
      ## Development apps
-     ../modules/home-manager/development/code/jetbrains/intellij.nix
-     ../modules/home-manager/development/code/jetbrains/android-studio.nix
-     ../modules/home-manager/development/code/neovim/neovim.nix
-     ../modules/home-manager/development/code/zed/zed.nix
+     ../modules/home-manager/development/code/intellij.nix
+     ../modules/home-manager/development/code/android-studio.nix
+     ../modules/home-manager/development/code/neovim.nix
+     ../modules/home-manager/development/code/zed.nix
 
      ../modules/home-manager/development/databases/visual/dbeaver.nix
 
@@ -15,7 +15,7 @@
      ../modules/home-manager/development/network/openvpn.nix
 
      ## Internet apps
-     ../modules/home-manager/internet-browse/firefox.nix
+     ../modules/home-manager/internet-browse/zen.nix
 
      ## Media consumption apps
      ../modules/home-manager/media-consumption/spotify.nix
@@ -49,6 +49,12 @@
         enable = true;
         userName = "akrck02";
         userEmail = "aketza.vazquez@gmail.com";
+    };
+
+    ## Neovim
+    home.file.".config/nvim" = {
+        source = ../dotfiles/.nvim;
+        recursive = true;
     };
 
     ## Basic dnconf configuration

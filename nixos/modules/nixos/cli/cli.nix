@@ -2,11 +2,12 @@
 
   ## Modules to import
   imports = [
-    ./btop/btop.nix
-    ./nitch/nitch.nix
-    ./tree/tree.nix
-    ./wget/wget.nix
-    ./zsh/zsh.nix
+    ./btop.nix
+    ./nitch.nix
+    ./tree.nix
+    ./wget.nix
+    ./zsh.nix
+    ./fzf.nix
   ];
 
 }

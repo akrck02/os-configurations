@@ -15,16 +15,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Stylix
-    # stylix = {
-    #   url = "github:danth/stylix/master";
-    #   inputs = {
-    #     nixpkgs.follows = "nixpkgs";
-    #     home-manager.follows = "home-manager";
-    #     git-hooks.follows = "pre-commit-hooks-nix";
-    #     flake-utils.follows = "flake-utils";
-    #   };
-    # };
+    # NOTE: if you experience a build failure with Zen, the first thing to check is to remove this line!
+    zen-browser.url = "github:youwen5/zen-browser-flake";
+    zen-browser.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   # Outputs of the flake

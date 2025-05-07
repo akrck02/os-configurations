@@ -7,12 +7,14 @@
     ../modules/nixos/cli/cli.nix
     ../modules/nixos/networking/networking.nix
     ../modules/nixos/containers/docker.nix
+    ../modules/nixos/development/language.servers.nix
   ];
 
   ## Configuration
   config = {
 
     home-manager.useGlobalPkgs = true;
+    home-manager.extraSpecialArgs = {inherit inputs;};
     home-manager.backupFileExtension = "back";
 
     environment.systemPackages = with pkgs; [
