@@ -62,6 +62,10 @@
         source = ../dotfiles/wallpapers/development.jpg;
     };
 
+    home.file.".face" = {
+        source = ../dotfiles/profile-pictures/development.png;
+    };
+
     ## Basic dnconf configuration
     dconf.settings = {
         "org/gnome/desktop/interface" = {

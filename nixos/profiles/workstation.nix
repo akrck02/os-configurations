@@ -1,4 +1,4 @@
-{ pkgs, lib, config, inputs, home-manager, ...} : {
+{ pkgs, inputs, ...} : {
 
   ## Modules to import
   imports = [
