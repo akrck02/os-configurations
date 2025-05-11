@@ -11,6 +11,9 @@
 
      ../modules/home-manager/development/databases/visual/dbeaver.nix
 
+     ../modules/home-manager/development/languages/python313.nix
+     ../modules/home-manager/development/languages/typescript.nix
+
      ../modules/home-manager/development/network/bruno.nix
      ../modules/home-manager/development/network/openvpn.nix
 

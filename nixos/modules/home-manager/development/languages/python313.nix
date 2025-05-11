@@ -1,7 +1,7 @@
 { pkgs, ...} : {
   config = {
     home.packages = with pkgs; [
-      bruno
+      python313
     ];
   };
 }
