@@ -10,10 +10,10 @@ do
             nixos-rebuild switch --flake /etc/nixos/#slimbook-executive-16 ;;
         "fuyu")
         	echo "Installing nixos on host $lng"
-         	nixos-rebuild switch --flake /etc/nixos/#slimbook-executive-16 ;;
-        "Cyoga")
+         	nixos-rebuild switch --flake /etc/nixos/#fuyu ;;
+        "yoga")
             echo "Installing nixos on host $lng"
-            nixos-rebuild switch --flake /etc/nixos/#slimbook-executive-16 ;;
+            nixos-rebuild switch --flake /etc/nixos/#yoga ;;
         "Quit")
            echo "Okay."
            break;;
