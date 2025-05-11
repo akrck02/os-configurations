@@ -17,7 +17,9 @@
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
-    boot.loader.efi.canTouchEfiVariables = true;
+    boot.loader.grub.devices = [
+    	"/dev/disk/by-uuid/2571a6d5-7690-4c85-800d-f6e474855600"
+    ]
 
     # Hostname
     networking.hostName = "yoga";
