@@ -36,7 +36,7 @@
           ];
         };
 
-        nixosConfigurations.haruhi = nixpkgs.lib.nixosSystem {
+        haruhi = nixpkgs.lib.nixosSystem {
            system = "x86_64-linux";
            specialArgs = {inherit inputs;};
            modules = [
@@ -46,7 +46,7 @@
         };
 
         # Servers
-        nixosConfigurations.fuyu = nixpkgs.lib.nixosSystem {
+        fuyu = nixpkgs.lib.nixosSystem {
            system = "x86_64-linux";
            specialArgs = {inherit inputs;};
            modules = [
@@ -55,11 +55,11 @@
            ];
         };
 
-        nixosConfigurations.yoga = nixpkgs.lib.nixosSystem {
+        yoga = nixpkgs.lib.nixosSystem {
            system = "x86_64-linux";
            specialArgs = {inherit inputs;};
            modules = [
-             # ./hardware/servers/yoga/default.nix
+             ./hosts/servers/yoga/yoga.nix
              inputs.home-manager.nixosModules.default
            ];
         };
