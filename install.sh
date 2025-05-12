@@ -1,4 +1,4 @@
-#!/bin/bash
+
 
 PS3="Select your host please: "
 
