@@ -2,7 +2,7 @@
 
 PS3="Select your host please: "
 
-select lng in slimbook-executive-16 fuyu yoga Quit
+select lng in aki haruhi fuyu natsu Quit
 do
     case $lng in
         "aki")
