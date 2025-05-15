@@ -17,7 +17,7 @@
 	  home-manager.backupFileExtension = "back";
 
 		# Development user
-    users.users.yoga = {
+    users.users.fuyu = {
         isNormalUser = true;
         home = "/home/fuyu";
         initialPassword = "12345";
@@ -27,7 +27,7 @@
         extraGroups = [ "networkmanager" "wheel" "docker" ];
         openssh.authorizedKeys.keys = [];
     };
-    home-manager.users.yoga = import ../users/fuyu.nix;
+    home-manager.users.fuyu = import ../users/fuyu.nix;
 
   };
 }
