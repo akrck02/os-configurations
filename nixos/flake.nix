@@ -40,7 +40,7 @@
            system = "x86_64-linux";
            specialArgs = {inherit inputs;};
            modules = [
-             # ./hardware/workstations/haruhi/default.nix
+             # ./hosts/workstations/haruhi/default.nix
              inputs.home-manager.nixosModules.default
            ];
         };
@@ -50,7 +50,7 @@
            system = "x86_64-linux";
            specialArgs = {inherit inputs;};
            modules = [
-             ./hardware/servers/fuyu/fuyu.nix
+             ./hosts/servers/fuyu/fuyu.nix
              inputs.home-manager.nixosModules.default
            ];
         };
