@@ -7,7 +7,7 @@
     ../modules/nixos/networking/networking.nix
     ../modules/nixos/containers/docker.nix
     ../modules/nixos/development/language.servers.nix
-    ../modules/containers/portainer.nix
+    ../modules/containers/hompage.nix
   ];
 
   ## Configuration
