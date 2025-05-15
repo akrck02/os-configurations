@@ -17,10 +17,10 @@
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
-    boot.loader.grub.device = "/dev/sda";
+    boot.loader.efi.canTouchEfiVariables = true;
 
     # Hostname
-    networking.hostName = "yoga";
+    networking.hostName = "aki";
 
     # Enable networking
     networking.networkmanager.enable = true;
@@ -33,7 +33,10 @@
   ## Modules to import
   imports = [
     ./hardware.nix
+    ./drivers/drivers.nix
     ./power-management.nix
-    ../../../profiles/low-power-server.nix
+
+    # Imported shared modules
+    ../../../profiles/workstation.nix
   ];
 }

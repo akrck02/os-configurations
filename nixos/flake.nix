@@ -27,11 +27,11 @@
       nixosConfigurations = {
 
         # Workstations
-        slimbook-executive-16 = nixpkgs.lib.nixosSystem {
+        aki = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = {inherit inputs;};
           modules = [
-            ./hosts/workstations/slimbook-executive-16/slimbook-executive-16.nix
+            ./hosts/workstations/aki/aki.nix
             inputs.home-manager.nixosModules.default
           ];
         };
@@ -55,11 +55,11 @@
            ];
         };
 
-        yoga = nixpkgs.lib.nixosSystem {
+        natsu = nixpkgs.lib.nixosSystem {
            system = "x86_64-linux";
            specialArgs = {inherit inputs;};
            modules = [
-             ./hosts/servers/yoga/yoga.nix
+             ./hosts/servers/natsu/natsu.nix
              inputs.home-manager.nixosModules.default
            ];
         };

@@ -17,10 +17,10 @@
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
-    boot.loader.efi.canTouchEfiVariables = true;
+    boot.loader.grub.device = "/dev/sda";
 
     # Hostname
-    networking.hostName = "slimbook-executive-16";
+    networking.hostName = "natsu";
 
     # Enable networking
     networking.networkmanager.enable = true;
@@ -33,10 +33,7 @@
   ## Modules to import
   imports = [
     ./hardware.nix
-    ./drivers/drivers.nix
     ./power-management.nix
-
-    # Imported shared modules
-    ../../../profiles/workstation.nix
+    ../../../profiles/low-power-server.nix
   ];
 }

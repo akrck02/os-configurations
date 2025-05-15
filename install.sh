@@ -5,18 +5,22 @@ PS3="Select your host please: "
 select lng in slimbook-executive-16 fuyu yoga Quit
 do
     case $lng in
-        "slimbook-executive-16")
+        "aki")
         	sh ./deploy.sh
             echo "Installing nixos on host $lng"
-            nixos-rebuild switch --flake /etc/nixos/#slimbook-executive-16 ;;
+            nixos-rebuild switch --flake /etc/nixos/#aki ;;
         "fuyu")
         	sh ./deploy.sh
         	echo "Installing nixos on host $lng"
          	nixos-rebuild switch --flake /etc/nixos/#fuyu ;;
-        "yoga")
+        "natsu")
         	sh ./deploy.sh
             echo "Installing nixos on host $lng"
-            nixos-rebuild switch --flake /etc/nixos/#yoga ;;
+            nixos-rebuild switch --flake /etc/nixos/#natsu ;;
+        "haruhi")
+           	sh ./deploy.sh
+            echo "Installing nixos on host $lng"
+            nixos-rebuild switch --flake /etc/nixos/#haruhi ;;
         "Quit")
            echo "Okay."
            break;;
