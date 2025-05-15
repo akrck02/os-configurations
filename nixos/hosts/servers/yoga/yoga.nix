@@ -17,9 +17,7 @@
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
-    boot.loader.grub.devices = [
-    	"/dev/disk/by-uuid/2571a6d5-7690-4c85-800d-f6e474855600"
-    ];
+    boot.loader.grub.device = "/dev/sda";
 
     # Hostname
     networking.hostName = "yoga";
