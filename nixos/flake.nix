@@ -50,7 +50,7 @@
            system = "x86_64-linux";
            specialArgs = {inherit inputs;};
            modules = [
-             # ./hardware/servers/fuyu/default.nix
+             ./hardware/servers/fuyu/fuyu.nix
              inputs.home-manager.nixosModules.default
            ];
         };
