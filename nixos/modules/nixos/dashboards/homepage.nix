@@ -126,6 +126,12 @@
 						Portainer = {
 							href = "https://fuyu:9443";
 							description = "Container manager.";
+							widget = {
+								type = "portainer";
+							 	url = "https://fuyu:9443";
+								env = 1;
+								key = "";
+							};
 						};
 					}
 					{
