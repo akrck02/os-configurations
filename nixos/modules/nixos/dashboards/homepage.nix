@@ -3,7 +3,7 @@
 
 	environment = {
 		PORT = 80;
-	}
+	};
 
 	networking.firewall = {
 		enable=true;
