@@ -31,6 +31,16 @@
     ];
   };
 
+  services.nginx.virtualHosts."fuyu.local" = {
+    addSSL = true;
+    enableACME = true;
+    locations."/grafana/" = {
+        proxyPass = "http://${toString config.services.grafana.settings.server.http_addr}:${toString config.services.grafana.settings.server.http_port}";
+        proxyWebsockets = true;
+        recommendedProxySettings = true;
+    };
+  };
+
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [ 2342 9002 ];
