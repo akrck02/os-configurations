@@ -9,6 +9,7 @@
   services.homepage-dashboard = {
 
 	  enable = true;
+		port = 80;
 
 	  settings = {
 			title = "Homelab - Fuyu server.";
@@ -28,7 +29,7 @@
 				Development = [
 					{
 						Gitea = {
-							href = "https://fuyu:8082";
+							href = "https://fuyu:8081";
 							description = "Git repository manager.";
 							widget = {
                 type = "gitea";
@@ -49,7 +50,7 @@
 				Cloud = [
 					{
 						Nextcloud = {
-							href = "https://fuyu:8082";
+							href = "https://fuyu:3333";
 							description = "Self hosted cloud suite.";
 						};
 					}
