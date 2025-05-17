@@ -23,23 +23,27 @@
 
 	  bookmarks = [];
 
-	  services = [{
-			Media = [{
-				Jellyfin = {
-					href = "0.0.0.0:8080";
-					description = "Local media streaming service.";
-				};
-			}];
-			Development = [{
-				Gitea = {
-					href = "0.0.0.0:8081";
-					description = "Git repository manager.";
-				};
-				Reposilite = {
-					href = "0.0.0.0:8081";
-					description = "Java/Kotlin artifact manager.";
-				};
-			}];
+	  services = [
+			{
+				Media = [{
+					Jellyfin = {
+						href = "0.0.0.0:8080";
+						description = "Local media streaming service.";
+					};
+				}];
+			}
+			{
+				Development = [{
+					Gitea = {
+						href = "0.0.0.0:8081";
+						description = "Git repository manager.";
+					};
+					Reposilite = {
+						href = "0.0.0.0:8081";
+						description = "Java/Kotlin artifact manager.";
+					};
+				}];
+			}
 		}];
 
 	  widgets = [
