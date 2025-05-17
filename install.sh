@@ -22,9 +22,10 @@ do
             echo "Installing nixos on host $lng"
             nixos-rebuild switch --flake /etc/nixos/#haruhi ;;
         "Quit")
-           echo "Okay."
+           echo "Have a nice day."
            break;;
         *)
-           echo "Ooops, something went wrong :(";;
+           echo "Have a nice day."
+           break;;
     esac
 done
