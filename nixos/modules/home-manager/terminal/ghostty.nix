@@ -8,6 +8,7 @@
             font-size = 14;
             window-padding-x = 0;
             window-padding-y = 0;
+            shell-integration-features = "sudo";
         };
     };
   };
