@@ -1,5 +1,3 @@
-
-
 PS3="Select your host please: "
 
 select lng in aki haruhi fuyu natsu Quit
