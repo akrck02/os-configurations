@@ -37,7 +37,7 @@
 					href = "0.0.0.0:8081";
 					description = "Git repository management.";
 				};
-			}]
+			}];
 		}];
 
 	  widgets = [
