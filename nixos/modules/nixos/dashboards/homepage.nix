@@ -10,17 +10,47 @@
 
 	  enable = true;
 
-	  settings = {};
+	  settings = {
 
-	  bookmarks = [];
+		};
 
-	  services = [];
+	  bookmarks = [
+			{
+				dev = [{
+					github = [{
+						abbr = "GH";
+						hrfe = "https://github.com/akrck02";
+					}];
+				}];
+			}
+		];
 
-	  widgets = [];
+	  services = [{
+			media = [{
+				jellyfin = {
+					href = "0.0.0.0:8080";
+					description = "Local media streaming service."
+				};
+			}];
+			dev = [{
+				gitea = {
+					href = "0.0.0.0:8081";
+					description = "Git repository management."
+				};
+			}]
+		}];
 
-	  kubernetes = { };
+	  widgets = [
 
-	  docker = { };
+		];
+
+	  kubernetes = {
+
+	  };
+
+	  docker = {
+
+	  };
 
 	  customJS = "";
 	  customCSS = "";
