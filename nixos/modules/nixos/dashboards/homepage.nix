@@ -13,12 +13,11 @@
 	  settings = {
 			title = "Fuyu homelab server.";
       favicon = "https://jnsgr.uk/favicon.ico";
-      background = "https://github.com/akrck02/os-configurations/blob/main/nixos/dotfiles/wallpapers/development.jpg";
+      background = "https://raw.githubusercontent.com/akrck02/os-configurations/refs/heads/main/nixos/dotfiles/wallpapers/development.jpg";
       headerStyle = "clean";
       layout = {
-        media = { style = "row"; columns = 3; };
-        infra = { style = "row"; columns = 4; };
-        machines = { style = "row"; columns = 4; };
+        dev = { style = "column"; rows = 1; };
+        media = { style = "column"; rows = 1; };
       };
 		};
 
