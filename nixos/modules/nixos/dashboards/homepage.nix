@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 {
 
+	environment = {
+		PORT = 80;
+	}
+
 	networking.firewall = {
 		enable=true;
 	  allowedTCPPorts = [ 8082 ];
@@ -9,7 +13,6 @@
   services.homepage-dashboard = {
 
 	  enable = true;
-		port = 80;
 
 	  settings = {
 			title = "Homelab - Fuyu server.";
