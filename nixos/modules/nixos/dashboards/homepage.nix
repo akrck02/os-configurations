@@ -29,13 +29,13 @@
 			media = [{
 				jellyfin = {
 					href = "0.0.0.0:8080";
-					description = "Local media streaming service."
+					description = "Local media streaming service.";
 				};
 			}];
 			dev = [{
 				gitea = {
 					href = "0.0.0.0:8081";
-					description = "Git repository management."
+					description = "Git repository management.";
 				};
 			}]
 		}];
