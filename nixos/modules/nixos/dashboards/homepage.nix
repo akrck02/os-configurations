@@ -48,7 +48,18 @@
 		}];
 
 	  widgets = [
-
+			{ search = { provider = "google"; target = "_blank"; }; }
+      { resources = { label = "system"; cpu = true; memory = true; }; }
+      { resources = { label = "storage"; disk = [ "/" ]; }; }
+      {
+        openmeteo = {
+          label = "Amurrio";
+          timezone = "Europe/Madrid";
+          latitude = "{{HOMEPAGE_VAR_LATITUDE}}";
+          longitude = "{{HOMEPAGE_VAR_LONGITUDE}}";
+          units = "metric";
+        };
+      }
 		];
 
 	  kubernetes = {
