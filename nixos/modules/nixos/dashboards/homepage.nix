@@ -93,8 +93,8 @@
 							description = "Private mesh VPN service.";
 							widget = {
                 type = "tailscale";
-                deviceid = "";
-                key = "";
+                deviceid = "0";
+                key = "0";
               };
 						};
 					}
