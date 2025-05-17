@@ -17,7 +17,8 @@
       headerStyle = "clean";
       layout = {
         Development = { style = "column"; rows = 1; };
-        Media = { style = "column"; rows = 1; };
+        Cloud = { style = "column"; rows = 1; };
+        Network = { style = "column"; rows = 1; };
       };
 		};
 
@@ -25,24 +26,102 @@
 
 	  services = [
 			{
-				Media = [{
-					Jellyfin = {
-						href = "0.0.0.0:8080";
-						description = "Local media streaming service.";
-					};
-				}];
+				Development = [
+					{
+						Gitea = {
+							href = "0.0.0.0:8082";
+							description = "Git repository manager.";
+						};
+				 	}
+				  {
+						Reposilite = {
+							href = "0.0.0.0:8082";
+							description = "Java/Kotlin artifact manager.";
+						};
+					}
+				];
 			}
 			{
-				Development = [{
-					Gitea = {
-						href = "0.0.0.0:8081";
-						description = "Git repository manager.";
-					};
-					Reposilite = {
-						href = "0.0.0.0:8081";
-						description = "Java/Kotlin artifact manager.";
-					};
-				}];
+				Cloud = [
+					{
+						Nextcloud = {
+							href = "0.0.0.0:8082";
+							description = "Self hosted cloud suite.";
+						};
+					}
+					{
+						Immich = {
+							href = "0.0.0.0:8082";
+							description = "Self hosted gallery.";
+						};
+					}
+					{
+						Jellyfin = {
+							href = "0.0.0.0:8082";
+							description = "Local media streaming service.";
+						};
+					}
+					{
+						Radarr = {
+							href = "0.0.0.0:8082";
+							description = "Movie collection manager.";
+						};
+					}
+				];
+			}
+			{
+				Network = [
+					{
+						Pihole = {
+							href = "0.0.0.0:8082";
+							description = "DNS resolver.";
+						};
+					}
+					{
+						"Uptime kuma" = {
+							href = "0.0.0.0:8082";
+							description = "Self hosted gallery.";
+						};
+					}
+					{
+						tailscale = {
+							href = "0.0.0.0:8082";
+							description = "Private mesh VPN service.";
+						};
+					}
+				];
+			}
+			{
+				Games = [
+					{
+						Dockercraft = {
+							href = "0.0.0.0:8082";
+							description = "Minecraft server.";
+						};
+					}
+				];
+			}
+			{
+				System = [
+					{
+						Grafana = {
+							href = "0.0.0.0:8082";
+							description = "DNS resolver.";
+						};
+					}
+					{
+						"Uptime kuma" = {
+							href = "0.0.0.0:8082";
+							description = "Self hosted gallery.";
+						};
+					}
+					{
+						tailscale = {
+							href = "0.0.0.0:8082";
+							description = "Private mesh VPN service.";
+						};
+					}
+				];
 			}
 		];
 
