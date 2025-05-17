@@ -31,7 +31,9 @@
     ];
   };
 
-  networking.firewall.allowedTCPPorts = [ 2342 9002 ];
-
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 2342 9002 ];
+  };
 
 }
