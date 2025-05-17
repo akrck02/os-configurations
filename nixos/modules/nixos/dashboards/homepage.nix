@@ -79,7 +79,7 @@
 					{
 						"Uptime kuma" = {
 							href = "0.0.0.0:8082";
-							description = "Self hosted gallery.";
+							description = "Health check for services.";
 						};
 					}
 					{
