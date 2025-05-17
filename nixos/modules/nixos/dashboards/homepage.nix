@@ -106,19 +106,13 @@
 					{
 						Grafana = {
 							href = "0.0.0.0:8082";
-							description = "DNS resolver.";
+							description = "Stats dashboard.";
 						};
 					}
 					{
-						"Uptime kuma" = {
+						Syncthing = {
 							href = "0.0.0.0:8082";
-							description = "Self hosted gallery.";
-						};
-					}
-					{
-						tailscale = {
-							href = "0.0.0.0:8082";
-							description = "Private mesh VPN service.";
+							description = "Sync service.";
 						};
 					}
 				];
