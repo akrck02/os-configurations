@@ -133,11 +133,15 @@
 		];
 
 	  widgets = [
-      {
+			{
+				{
 
-      	logo = {
+					logo = {
        		icon = "https://avatars.githubusercontent.com/u/43274508?v=4";
        	};
+			}
+      {
+
       	resources = {
       		label = "system";
         	cpu = true;
