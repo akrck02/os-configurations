@@ -8,7 +8,7 @@
         image = "ghcr.io/gethomepage/homepage:latest";
         extraOptions = [ "--net=host" ];
         ports = [
-          "3000:3000"
+          "127.0.0.1:3000:3000"
         ];
         volumes = [
           "/home/fuyu/.dotfiles/Homepage-startpage/config:/app/config"
