@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   virtualisation.oci-containers = {
-    backend = "podman";
+    backend = "docker";
     containers = {
       Homepage = {
         autoStart = true;
