@@ -26,7 +26,7 @@
 				dev = [{
 					github = [{
 						abbr = "GH";
-						hrfe = "https://github.com/akrck02";
+						href = "https://github.com/akrck02";
 					}];
 				}];
 			}
