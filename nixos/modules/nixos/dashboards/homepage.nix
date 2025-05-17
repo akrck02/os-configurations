@@ -13,6 +13,7 @@
 	  settings = {
 			title = "Homelab - Fuyu server.";
       favicon = "https://avatars.githubusercontent.com/u/43274508?v=4";
+      logo = "https://avatars.githubusercontent.com/u/43274508?v=4";
       background = "https://raw.githubusercontent.com/akrck02/os-configurations/refs/heads/main/nixos/dotfiles/wallpapers/development.jpg";
       headerStyle = "clean";
       layout = {
