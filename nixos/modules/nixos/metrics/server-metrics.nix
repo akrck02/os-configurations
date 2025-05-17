@@ -5,7 +5,7 @@
 
       settings = {
         server = {
-          domain = "grafana.pele";
+          #domain = "grafana.pele";
           http_port = 2342;
           http_addr = "127.0.0.1";
         };
