@@ -11,7 +11,7 @@
 	  enable = true;
 
 	  settings = {
-			title = "Fuyu homelab server.";
+			title = "Homelab - Fuyu server.";
       favicon = "https://avatars.githubusercontent.com/u/43274508?v=4";
       background = "https://raw.githubusercontent.com/akrck02/os-configurations/refs/heads/main/nixos/dotfiles/wallpapers/development.jpg";
       headerStyle = "clean";
@@ -21,8 +21,6 @@
         Network = { style = "column"; rows = 1; };
       };
 		};
-
-	  bookmarks = [];
 
 	  services = [
 			{
@@ -85,8 +83,13 @@
 					}
 					{
 						tailscale = {
-							href = "0.0.0.0:8082";
+							href = "https://login.tailscale.com/admin/machines";
 							description = "Private mesh VPN service.";
+       				widget = {
+                type = "tailscale";
+                deviceid = "{{HOMEPAGE_VAR_TAILSCALE_THOR_DEVICE_ID}}";
+                key = "{{HOMEPAGE_VAR_TAILSCALE_AUTH_KEY}}";
+              };
 						};
 					}
 				];
@@ -137,6 +140,9 @@
         };
       }
 		];
+
+    bookmarks = [];
+
 
 	  kubernetes = {
 
