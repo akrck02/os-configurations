@@ -28,13 +28,18 @@
 				Development = [
 					{
 						Gitea = {
-							href = "0.0.0.0:8082";
+							href = "https://0.0.0.0:8082";
 							description = "Git repository manager.";
+							widget = {
+                type = "gitea";
+                url = "https://0.0.0.0:8082";
+                key = "";
+              };
 						};
 				 	}
 				  {
 						Reposilite = {
-							href = "0.0.0.0:8082";
+							href = "https://0.0.0.0:8082";
 							description = "Java/Kotlin artifact manager.";
 						};
 					}
@@ -44,25 +49,25 @@
 				Cloud = [
 					{
 						Nextcloud = {
-							href = "0.0.0.0:8082";
+							href = "https://0.0.0.0:8082";
 							description = "Self hosted cloud suite.";
 						};
 					}
 					{
 						Immich = {
-							href = "0.0.0.0:8082";
+							href = "https://0.0.0.0:8082";
 							description = "Self hosted gallery.";
 						};
 					}
 					{
 						Jellyfin = {
-							href = "0.0.0.0:8082";
+							href = "https://0.0.0.0:8082";
 							description = "Local media streaming service.";
 						};
 					}
 					{
 						Radarr = {
-							href = "0.0.0.0:8082";
+							href = "https://0.0.0.0:8082";
 							description = "Movie collection manager.";
 						};
 					}
@@ -72,13 +77,13 @@
 				Network = [
 					{
 						Pihole = {
-							href = "0.0.0.0:8082";
+							href = "https://0.0.0.0:8082";
 							description = "DNS resolver.";
 						};
 					}
 					{
 						"Uptime kuma" = {
-							href = "0.0.0.0:8082";
+							href = "https://0.0.0.0:8082";
 							description = "Health check for services.";
 						};
 					}
@@ -86,10 +91,10 @@
 						tailscale = {
 							href = "https://login.tailscale.com/admin/machines";
 							description = "Private mesh VPN service.";
-       				widget = {
+							widget = {
                 type = "tailscale";
-                deviceid = "{{HOMEPAGE_VAR_TAILSCALE_THOR_DEVICE_ID}}";
-                key = "{{HOMEPAGE_VAR_TAILSCALE_AUTH_KEY}}";
+                deviceid = "";
+                key = "";
               };
 						};
 					}
@@ -99,7 +104,7 @@
 				Games = [
 					{
 						Dockercraft = {
-							href = "0.0.0.0:8082";
+							href = "https://0.0.0.0:8082";
 							description = "Minecraft server.";
 							widget = {
 								type = "minecraft";
@@ -113,13 +118,13 @@
 				System = [
 					{
 						Grafana = {
-							href = "0.0.0.0:8082";
+							href = "https://0.0.0.0:8082";
 							description = "Stats dashboard.";
 						};
 					}
 					{
 						Syncthing = {
-							href = "0.0.0.0:8082";
+							href = "https://0.0.0.0:8082";
 							description = "Sync service.";
 						};
 					}
