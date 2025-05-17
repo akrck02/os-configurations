@@ -12,7 +12,6 @@
     options = [ "fmask=0077" "dmask=0077" ];
   };
 
-
   fileSystems."/media/services" = {
   	device = "/dev/disk/by-uuid/159b1095-bd53-45e7-9701-5cabfa4908c5";
     fsType = "ext4";
