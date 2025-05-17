@@ -7,7 +7,7 @@
 
 	networking.firewall = {
 		enable=true;
-	  allowedTCPPorts = [ 8082 ];
+	  allowedTCPPorts = [ 80 ];
 	};
 
   services.homepage-dashboard = {
