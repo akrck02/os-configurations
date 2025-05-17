@@ -8,6 +8,9 @@
     ../modules/nixos/containers/docker.nix
     ../modules/nixos/development/language.servers.nix
     ../modules/nixos/dashboards/homepage.nix
+
+    # services
+    ../modules/nixos/metrics/server-metrics.nix
   ];
 
   ## Configuration
