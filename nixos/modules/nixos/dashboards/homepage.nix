@@ -33,33 +33,24 @@
 		];
 
 	  services = [{
-			# media = [{
-			# 	jellyfin = {
-			# 		href = "0.0.0.0:8080";
-			# 		description = "Local media streaming service.";
-			# 	};
-			# }];
-			# dev = [{
-			# 	gitea = {
-			# 		href = "0.0.0.0:8081";
-			# 		description = "Git repository management.";
-			# 	};
-			# }];
+			media = [{
+				jellyfin = {
+					href = "0.0.0.0:8080";
+					description = "Local media streaming service.";
+				};
+			}];
+			dev = [{
+				gitea = {
+					href = "0.0.0.0:8081";
+					description = "Git repository management.";
+				};
+			}];
 		}];
 
 	  widgets = [
 			{ search = { provider = "google"; target = "_blank"; }; }
       { resources = { label = "system"; cpu = true; memory = true; }; }
       { resources = { label = "storage"; disk = [ "/" ]; }; }
-      {
-        openmeteo = {
-          label = "Amurrio";
-          timezone = "Europe/Madrid";
-          latitude = "{{HOMEPAGE_VAR_LATITUDE}}";
-          longitude = "{{HOMEPAGE_VAR_LONGITUDE}}";
-          units = "metric";
-        };
-      }
 		];
 
 	  kubernetes = {
