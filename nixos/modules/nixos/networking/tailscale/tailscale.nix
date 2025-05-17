@@ -9,7 +9,7 @@
      	allowedUDPPorts = [ config.services.tailscale.port ];
      	checkReversePath = "loose";
       trustedInterfaces = [ "tailscale0" ];
-    }.
+    };
     environment.systemPackages = with pkgs; [ tailscale ];
   };
 }
