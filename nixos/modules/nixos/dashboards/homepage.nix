@@ -76,6 +76,17 @@
 			{
 				Network = [
 					{
+						tailscale = {
+							href = "https://login.tailscale.com/admin/machines";
+							description = "Private mesh VPN service.";
+							widget = {
+                type = "tailscale";
+                deviceid = "0";
+                key = "0";
+              };
+						};
+					}
+					{
 						Pihole = {
 							href = "https://fuyu:8082";
 							description = "DNS resolver.";
@@ -85,17 +96,6 @@
 						"Uptime kuma" = {
 							href = "https://fuyu:8082";
 							description = "Health check for services.";
-						};
-					}
-					{
-						tailscale = {
-							href = "https://login.tailscale.com/admin/machines";
-							description = "Private mesh VPN service.";
-							widget = {
-                type = "tailscale";
-                deviceid = "0";
-                key = "0";
-              };
 						};
 					}
 				];
