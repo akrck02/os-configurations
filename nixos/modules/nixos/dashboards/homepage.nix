@@ -11,7 +11,14 @@
 	  enable = true;
 
 	  settings = {
-
+			title = "Fuyu homelab server.";
+      favicon = "https://jnsgr.uk/favicon.ico";
+      headerStyle = "clean";
+      layout = {
+        media = { style = "row"; columns = 3; };
+        infra = { style = "row"; columns = 4; };
+        machines = { style = "row"; columns = 4; };
+      };
 		};
 
 	  bookmarks = [
@@ -26,18 +33,18 @@
 		];
 
 	  services = [{
-			media = [{
-				jellyfin = {
-					href = "0.0.0.0:8080";
-					description = "Local media streaming service.";
-				};
-			}];
-			dev = [{
-				gitea = {
-					href = "0.0.0.0:8081";
-					description = "Git repository management.";
-				};
-			}];
+			# media = [{
+			# 	jellyfin = {
+			# 		href = "0.0.0.0:8080";
+			# 		description = "Local media streaming service.";
+			# 	};
+			# }];
+			# dev = [{
+			# 	gitea = {
+			# 		href = "0.0.0.0:8081";
+			# 		description = "Git repository management.";
+			# 	};
+			# }];
 		}];
 
 	  widgets = [
