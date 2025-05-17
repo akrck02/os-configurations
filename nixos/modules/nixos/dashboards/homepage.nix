@@ -118,13 +118,19 @@
 				System = [
 					{
 						Grafana = {
-							href = "https://0.0.0.0:8082";
+							href = "https://fuyu:8082";
 							description = "Stats dashboard.";
 						};
 					}
 					{
+						Portainer = {
+							href = "https://fuyu:9443";
+							description = "Container manager.";
+						};
+					}
+					{
 						Syncthing = {
-							href = "https://0.0.0.0:8082";
+							href = "https://fuyu:8082";
 							description = "Sync service.";
 						};
 					}
