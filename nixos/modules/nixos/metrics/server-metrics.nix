@@ -5,7 +5,7 @@
 
       settings = {
         server = {
-          http_port = 2342;
+          http_port = 3000;
           http_addr = "127.0.0.1";
           enforce_domain = false;
           enable_gzip = true;
@@ -34,7 +34,7 @@
 
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 2342 9002 ];
+    allowedTCPPorts = [ 3000 9002 ];
   };
 
 }
