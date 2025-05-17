@@ -102,7 +102,7 @@
 							href = "0.0.0.0:8082";
 							description = "Minecraft server.";
 							widget = {
-								type = "Minecraft";
+								type = "minecraft";
 								url = "udp://0.0.0.0:25565";
 							};
 						};
