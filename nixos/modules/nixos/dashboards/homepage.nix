@@ -16,14 +16,14 @@
       background = "https://raw.githubusercontent.com/akrck02/os-configurations/refs/heads/main/nixos/dotfiles/wallpapers/development.jpg";
       headerStyle = "clean";
       layout = {
-        dev = { style = "column"; rows = 1; };
-        media = { style = "column"; rows = 1; };
+        Development = { style = "column"; rows = 1; };
+        Media = { style = "column"; rows = 1; };
       };
 		};
 
 	  bookmarks = [
 			{
-				dev = [{
+				Development = [{
 					github = [{
 						abbr = "GH";
 						href = "https://github.com/akrck02";
@@ -33,7 +33,7 @@
 		];
 
 	  services = [{
-			media = [{
+			Media = [{
 				jellyfin = {
 					href = "0.0.0.0:8080";
 					description = "Local media streaming service.";
@@ -48,9 +48,22 @@
 		}];
 
 	  widgets = [
-			{ search = { provider = "google"; target = "_blank"; }; }
-      { resources = { label = "system"; cpu = true; memory = true; }; }
-      { resources = { label = "storage"; disk = [ "/" ]; }; }
+      {
+      	resources = {
+      		label = "system";
+        	cpu = true;
+         	memory = true;
+          cputemp= true;
+          tempmin= 0; # optional, minimum cpu temp
+          tempmax= 100; # optional, maximum cpu temp
+          uptime= true;
+       	};
+      }
+      {
+       	resources = {
+        	label = "storage"; disk = [ "/" ];
+        };
+      }
 		];
 
 	  kubernetes = {
