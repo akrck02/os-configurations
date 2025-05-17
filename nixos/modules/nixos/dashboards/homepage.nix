@@ -28,18 +28,18 @@
 				Development = [
 					{
 						Gitea = {
-							href = "https://0.0.0.0:8082";
+							href = "https://fuyu:8082";
 							description = "Git repository manager.";
 							widget = {
                 type = "gitea";
-                url = "https://0.0.0.0:8082";
+                url = "https://fuyu:8082";
                 key = "";
               };
 						};
 				 	}
 				  {
 						Reposilite = {
-							href = "https://0.0.0.0:8082";
+							href = "https://fuyu:8082";
 							description = "Java/Kotlin artifact manager.";
 						};
 					}
@@ -49,25 +49,25 @@
 				Cloud = [
 					{
 						Nextcloud = {
-							href = "https://0.0.0.0:8082";
+							href = "https://fuyu:8082";
 							description = "Self hosted cloud suite.";
 						};
 					}
 					{
 						Immich = {
-							href = "https://0.0.0.0:8082";
+							href = "https://fuyu:8082";
 							description = "Self hosted gallery.";
 						};
 					}
 					{
 						Jellyfin = {
-							href = "https://0.0.0.0:8082";
+							href = "https://fuyu:8082";
 							description = "Local media streaming service.";
 						};
 					}
 					{
 						Radarr = {
-							href = "https://0.0.0.0:8082";
+							href = "https://fuyu:8082";
 							description = "Movie collection manager.";
 						};
 					}
@@ -77,13 +77,13 @@
 				Network = [
 					{
 						Pihole = {
-							href = "https://0.0.0.0:8082";
+							href = "https://fuyu:8082";
 							description = "DNS resolver.";
 						};
 					}
 					{
 						"Uptime kuma" = {
-							href = "https://0.0.0.0:8082";
+							href = "https://fuyu:8082";
 							description = "Health check for services.";
 						};
 					}
@@ -104,11 +104,11 @@
 				Games = [
 					{
 						Dockercraft = {
-							href = "https://0.0.0.0:8082";
+							href = "https://fuyu:8082";
 							description = "Minecraft server.";
 							widget = {
 								type = "minecraft";
-								url = "udp://0.0.0.0:25565";
+								url = "udp://akrck02.duckdns.org:25565";
 							};
 						};
 					}
