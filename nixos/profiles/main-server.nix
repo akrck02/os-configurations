@@ -29,6 +29,5 @@
         openssh.authorizedKeys.keys = [];
     };
     home-manager.users.fuyu = import ../users/fuyu.nix;
-
   };
 }
