@@ -32,6 +32,7 @@
 
   ## Modules to import
   imports = [
+  	./storage.nix
     ./hardware.nix
     ./power-management.nix
 
