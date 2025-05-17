@@ -5,7 +5,7 @@
 
 	  enable = true;
 		openFirewall = true;
-		listenPort = 80;
+		listenPort = 8082;
 
 	  settings = {
 			title = "Homelab - Fuyu server.";
