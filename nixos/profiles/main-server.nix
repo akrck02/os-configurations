@@ -65,7 +65,7 @@
     ## Nextcloud
     services.nextcloud = {
 
-      # hostName = "nix-nextcloud";
+      hostName = "192.168.50.2";
 
       config = {
 
