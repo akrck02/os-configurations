@@ -20,7 +20,6 @@
         ];
         extraTrustedDomains = [ ];
         overwriteProtocol = "https";
-        https = true;
       };
 
       # specify only if you want redis caching
