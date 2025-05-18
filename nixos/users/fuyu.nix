@@ -30,6 +30,5 @@
       source = ../dotfiles/.nvim;
       recursive = true;
     };
-
   };
 }

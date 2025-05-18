@@ -38,5 +38,45 @@
       openssh.authorizedKeys.keys = [ ];
     };
     home-manager.users.fuyu = import ../users/fuyu.nix;
+
+    ## Nginx reverse proxy
+    services.nginx = {
+      enable = true;
+      recommendedProxySettings = true;
+      recommendedTlsSettings = true;
+
+      # other Nginx options
+      virtualHosts."192.168.50.2" = {
+        enableACME = true;
+        forceSSL = true;
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:8082";
+          proxyWebsockets = true; # needed if you need to use WebSocket
+          extraConfig =
+            # required when the target is also TLS server with multiple hosts
+            "proxy_ssl_server_name on;"
+            +
+              # required when the server wants to use HTTP Authentication
+              "proxy_pass_header Authorization;";
+        };
+      };
+    };
+
+    ## Nextcloud
+    services.nextcloud = {
+
+      # hostName = "nix-nextcloud";
+
+      config = {
+
+        adminuser = "admin";
+        adminpassFile = "/etc/nixos/password.txt";
+
+        extraTrustedDomains = [
+          "192.168.50.2"
+          "fuyu"
+        ];
+      };
+    };
   };
 }
