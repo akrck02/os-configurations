@@ -1,8 +1,6 @@
 # Slimbook executive 16 custom configuration
 { pkgs, lib, config, inputs, home-manager, ...} : {
 
-
-
   ## Configuration
   config = {
 
