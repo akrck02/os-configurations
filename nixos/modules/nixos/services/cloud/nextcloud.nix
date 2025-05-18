@@ -37,12 +37,6 @@
     postgresql = {
       enable = true;
       ensureDatabases = [ "nextcloud" ];
-      ensureUsers = [
-        {
-          name = "nextcloud";
-          ensurePermissions."DATABASE nextcloud" = "ALL PRIVILEGES";
-        }
-      ];
     };
 
     # optional backup for postgresql db
@@ -54,6 +48,11 @@
       startAt = "*-*-* 23:15:00";
     };
   };
+
+  systemd.services.postgresql.postStart = lib.mkAfter ''
+    $PSQL mydb -tAc 'GRANT ALL ON ALL TABLES IN SCHEMA public TO nextcloud' || true
+    $PSQL mydb -tAc 'GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO nextcloud' || true
+  '';
 
   # ensure that postgres is running *before* running the setup
   systemd.services."nextcloud-setup" = {
