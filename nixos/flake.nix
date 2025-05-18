@@ -21,15 +21,16 @@
   };
 
   # Outputs of the flake
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs =
+    { self, nixpkgs, ... }@inputs:
+    {
 
-      # homeManagerModules.default = ./modules/home-manager;
       nixosConfigurations = {
 
         # Workstations
         aki = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          specialArgs = {inherit inputs;};
+          specialArgs = { inherit inputs; };
           modules = [
             ./hosts/workstations/aki/aki.nix
             inputs.home-manager.nixosModules.default
@@ -37,32 +38,32 @@
         };
 
         haruhi = nixpkgs.lib.nixosSystem {
-           system = "x86_64-linux";
-           specialArgs = {inherit inputs;};
-           modules = [
-             # ./hosts/workstations/haruhi/default.nix
-             inputs.home-manager.nixosModules.default
-           ];
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            # ./hosts/workstations/haruhi/default.nix
+            inputs.home-manager.nixosModules.default
+          ];
         };
 
         # Servers
         fuyu = nixpkgs.lib.nixosSystem {
-           system = "x86_64-linux";
-           specialArgs = {inherit inputs;};
-           modules = [
-             ./hosts/servers/fuyu/fuyu.nix
-             inputs.home-manager.nixosModules.default
-           ];
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/servers/fuyu/fuyu.nix
+            inputs.home-manager.nixosModules.default
+          ];
         };
 
         natsu = nixpkgs.lib.nixosSystem {
-           system = "x86_64-linux";
-           specialArgs = {inherit inputs;};
-           modules = [
-             ./hosts/servers/natsu/natsu.nix
-             inputs.home-manager.nixosModules.default
-           ];
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/servers/natsu/natsu.nix
+            inputs.home-manager.nixosModules.default
+          ];
         };
       };
-  };
+    };
 }

@@ -1,5 +1,7 @@
 # ssh install
-{ config, lib, pkgs, inputs, ... }:
+{
+  ...
+}:
 
 {
   config = {

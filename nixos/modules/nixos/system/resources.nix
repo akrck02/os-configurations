@@ -1,7 +1,8 @@
-{ pkgs, lib, config, ...} : {
+{ pkgs, ... }:
+{
   config = {
-    environment.systemPackages = with pkgs;  [
-    	resources
+    environment.systemPackages = with pkgs; [
+      resources
     ];
   };
 }

@@ -1,7 +1,11 @@
 # fzf install
-{ config, lib, pkgs, inputs, ... }: {
+{
+  pkgs,
+  ...
+}:
+{
   environment.systemPackages = with pkgs; [
     fzf
   ];
- # programs.fzf.enable = true;
+  # programs.fzf.enable = true;
 }

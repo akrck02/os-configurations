@@ -1,5 +1,9 @@
 # hyprland install
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  ...
+}:
 
 {
   ## Options of the flake
@@ -7,7 +11,7 @@
     config.desktop-hyprland.enable = lib.mkEnableOption "enables hyprland";
   };
 
-  config = lib.mkIf config.desktop-hyprland.enable  {
+  config = lib.mkIf config.desktop-hyprland.enable {
     # TODO enable hyprland
   };
 

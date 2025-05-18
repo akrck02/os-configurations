@@ -1,5 +1,6 @@
 # tree install
-{ config, lib, pkgs, inputs, ... }: {
+{ pkgs, ... }:
+{
   environment.systemPackages = with pkgs; [
     tree
   ];

@@ -1,4 +1,7 @@
-{ config, pkgs, lib, ... }: {
+{
+  ...
+}:
+{
 
   ## Modules to import
   imports = [
