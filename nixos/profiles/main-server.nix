@@ -56,8 +56,8 @@
             # required when the target is also TLS server with multiple hosts
             "proxy_ssl_server_name on;"
             +
-              # required when the server wants to use HTTP Authentication
-              "proxy_pass_header Authorization;";
+            # required when the server wants to use HTTP Authentication
+            "proxy_pass_header Authorization;";
         };
       };
     };
@@ -81,6 +81,10 @@
       databases = [ "nextcloud" ];
       # time to start backup in systemd.time format
       startAt = "*-*-* 23:15:00";
+    };
+
+    security.acme.certs.<name>.email = {
+
     };
 
     # services.nginx.virtualHosts."nix-nextcloud".listen = [

@@ -19,17 +19,17 @@
 	  environment.systemPackages = with pkgs; [];
 
 		# Development user
-    users.users.yoga = {
+    users.users.natsu = {
         isNormalUser = true;
-        home = "/home/yoga";
+        home = "/home/natsu";
         initialPassword = "12345";
-        description = "Admin user for yoga server";
+        description = "Admin user for natsu server";
         shell = pkgs.zsh;
         createHome = true;
         extraGroups = [ "networkmanager" "wheel" "docker" ];
         openssh.authorizedKeys.keys = [];
     };
-    home-manager.users.yoga = import ../users/yoga.nix;
+    home-manager.users.natsu = import ../users/natsu.nix;
 
   };
 }
