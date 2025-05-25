@@ -5,8 +5,8 @@
     ## Nextcloud
     nextcloud = {
       enable = true;
-      configureRedis = true;
-      #hostName = "nix-nextcloud";
+      # configureRedis = true;
+      # hostName = "nix-nextcloud";
       autoUpdateApps.enable = true;
       config = {
         dbtype = "pgsql";
@@ -24,12 +24,12 @@
 
       # specify only if you want redis caching
       extraOptions = {
-        redis = {
-          # host = "127.0.0.1";
-          port = 31638;
-          dbindex = 0;
-          timeout = 1.5;
-        };
+        # redis = {
+        #   host = "127.0.0.1";
+        #   port = 31638;
+        #   dbindex = 0;
+        #   timeout = 1.5;
+        # };
       };
     };
 
