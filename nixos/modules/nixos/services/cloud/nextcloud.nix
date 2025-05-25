@@ -5,8 +5,6 @@
     ## Nextcloud
     nextcloud = {
       enable = true;
-      # configureRedis = true;
-      # hostName = "nix-nextcloud";
       autoUpdateApps.enable = true;
       config = {
         dbtype = "pgsql";
@@ -19,18 +17,10 @@
           "127.0.0.1"
         ];
         extraTrustedDomains = [ ];
-        # overwriteProtocol = "https";
       };
 
       # specify only if you want redis caching
-      extraOptions = {
-        # redis = {
-        #   host = "127.0.0.1";
-        #   port = 31638;
-        #   dbindex = 0;
-        #   timeout = 1.5;
-        # };
-      };
+      extraOptions = {};
     };
 
     ## PostgreSQL
