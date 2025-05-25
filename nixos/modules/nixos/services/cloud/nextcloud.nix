@@ -25,7 +25,7 @@
       # specify only if you want redis caching
       extraOptions = {
         redis = {
-          host = "127.0.0.1";
+          # host = "127.0.0.1";
           port = 31638;
           dbindex = 0;
           timeout = 1.5;
@@ -56,5 +56,4 @@
     requires = [ "postgresql.service" ];
     after = [ "postgresql.service" ];
   };
-
 }
