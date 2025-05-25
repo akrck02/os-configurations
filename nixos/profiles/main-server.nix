@@ -85,7 +85,7 @@
 
      security.acme = {
      	acceptTerms = true;
-     	certs.defaults.email = "akrck02@gmail.com"
+     	certs.defaults.email = "akrck02@gmail.com";
      };
 
     # services.nginx.virtualHosts."nix-nextcloud".listen = [
