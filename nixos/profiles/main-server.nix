@@ -83,16 +83,16 @@
       startAt = "*-*-* 23:15:00";
     };
 
-     security.acme = {
-     	acceptTerms = true;
-     	certs.defaults.email = "akrck02@gmail.com";
-     };
+     # security.acme = {
+     # 	acceptTerms = true;
+     # 	certs.defaults.email = "akrck02@gmail.com";
+     # };
 
-    # services.nginx.virtualHosts."nix-nextcloud".listen = [
-    #   {
-    #     addr = "127.0.0.1";
-    #     port = 8009;
-    #   }
-    # ];
+    services.nginx.virtualHosts."nix-nextcloud".listen = [
+      {
+        addr = "127.0.0.1";
+        port = 8009;
+      }
+    ];
   };
 }

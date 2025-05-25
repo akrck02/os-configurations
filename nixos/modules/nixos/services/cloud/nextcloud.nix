@@ -19,7 +19,7 @@
           "127.0.0.1"
         ];
         extraTrustedDomains = [ ];
-        overwriteProtocol = "https";
+        # overwriteProtocol = "https";
       };
 
       # specify only if you want redis caching
