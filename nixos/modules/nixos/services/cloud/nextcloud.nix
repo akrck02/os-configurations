@@ -42,10 +42,7 @@
     # optional backup for postgresql db
     postgresqlBackup = {
       enable = true;
-      location = "/data/backup/nextclouddb";
       databases = [ "nextcloud" ];
-      # time to start backup in systemd.time format
-      startAt = "*-*-* 23:15:00";
     };
   };
 
