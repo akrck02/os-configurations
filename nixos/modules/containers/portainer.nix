@@ -1,13 +1,12 @@
  { config, pkgs, ... }:
  {
-
 	 networking.firewall = {
 	   allowedTCPPorts = [ 8000 9443 9000 ];
 	   checkReversePath = "loose";
 	   trustedInterfaces = [ "enp1s0" ];
 	 };
 
-   config.virtualisation.oci-containers.containers = {
+   virtualisation.oci-containers.containers = {
      portainer = {
        image = "docker.io/portainer/portainer-ce:2.29.2-alpine";
        ports = [
