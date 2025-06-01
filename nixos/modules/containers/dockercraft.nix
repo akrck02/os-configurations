@@ -32,7 +32,7 @@
 	         INIT_MEMORY = "512m";
 	         EXEC_DIRECTLY = true;
          };
-         restart = "unless-stopped";
+         # restart = "unless-stopped";
 	     };
 	   };
    };
