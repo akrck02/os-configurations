@@ -7,7 +7,8 @@
 	 };
 
    virtualisation.oci-containers.containers = {
-     portainer = {
+   		backend = "docker";
+     	portainer = {
        image = "docker.io/portainer/portainer-ce:2.29.2-alpine";
        ports = [
        	"127.0.0.1:9000:9000"
