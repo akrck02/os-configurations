@@ -101,7 +101,7 @@
 
     ## Grafana
     services.grafana.settings = {
-    	root_url = "http://fuyu/grafana/";
+    	server.root_url = "http://fuyu/grafana/";
      	serve_from_sub_path = true;
     };
 
