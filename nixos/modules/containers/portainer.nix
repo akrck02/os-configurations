@@ -1,11 +1,5 @@
  { config, pkgs, ... }:
  {
-	 networking.firewall = {
-	   allowedTCPPorts = [ 8000 9443 9000 ];
-	   checkReversePath = "loose";
-	   trustedInterfaces = [ "enp1s0" ];
-	 };
-
    virtualisation.oci-containers = {
    	backend = "docker";
    	containers = {

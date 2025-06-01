@@ -16,6 +16,7 @@
 
     # containers
     ../modules/containers/portainer.nix
+    ../modules/containers/dockercraft.nix
   ];
 
   ## Configuration
@@ -44,7 +45,14 @@
 
     # Networking
     networking.firewall = {
-      allowedTCPPorts = [ 80 443 ];
+      allowedTCPPorts = [
+      	80
+       	443
+        8000
+        9443
+        9000
+        25575
+      ];
       checkReversePath = "loose";
       trustedInterfaces = [ "enp1s0" ];
     };
