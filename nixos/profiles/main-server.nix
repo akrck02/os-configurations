@@ -115,6 +115,8 @@
       };
     };
 
+    services.grafana.settings.root_url = "127.0.0.1/grafana/";
+
     services.postgresqlBackup = {
       location = "/media/backup/services/nextcloud/database";
       # time to start backup in systemd.time format
