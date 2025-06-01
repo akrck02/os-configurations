@@ -67,7 +67,7 @@
     };
 
     networking.firewall = {
-      allowedTCPPorts = [ 80, 443 ];
+      allowedTCPPorts = [ 80 443 ];
       checkReversePath = "loose";
       trustedInterfaces = [ "enp1s0" ];
     };
