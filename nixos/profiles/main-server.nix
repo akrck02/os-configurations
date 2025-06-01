@@ -123,7 +123,7 @@
 
     ## Grafana
     services.grafana.settings = {
-    	root_url = "127.0.0.1/grafana/";
+    	root_url = "http://127.0.0.1/grafana/";
      	serve_from_sub_path = true;
     };
 
