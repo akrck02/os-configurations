@@ -58,6 +58,12 @@
     };
 
     ## Nginx reverse proxy
+
+    # security.acme = {
+    # 	acceptTerms = true;
+    # 	certs.defaults.email = "akrck02@gmail.com";
+    # };
+
     services.nginx = {
       enable = true;
 
@@ -73,9 +79,16 @@
 					locations."/grafana/" = {
 		        proxyPass = "http://127.0.0.1:3000";
 		        proxyWebsockets = true; # needed if you need to use WebSocket
+						recommendedProxySettings = true;
           	extraConfig = "proxy_ssl_server_name on;" + # required when the target is also TLS server with multiple hosts
             "proxy_pass_header Authorization;";  # required when the server wants to use HTTP Authentication
 		      };
+					locations."/nextcloud/" = {
+					  proxyPass = "http://127.0.0.1:8009";
+					  proxyWebsockets = true; # needed if you need to use WebSocket
+						extraConfig = "proxy_ssl_server_name on;" + # required when the target is also TLS server with multiple hosts
+						"proxy_pass_header Authorization;";  # required when the server wants to use HTTP Authentication
+			    };
 	      };
       };
     };
@@ -106,17 +119,5 @@
      		serve_from_sub_path = true;
      	};
     };
-
-     # security.acme = {
-     # 	acceptTerms = true;
-     # 	certs.defaults.email = "akrck02@gmail.com";
-     # };
-
-    services.nginx.virtualHosts."nix-nextcloud".listen = [
-      {
-        addr = "127.0.0.1";
-        port = 8009;
-      }
-    ];
   };
 }
