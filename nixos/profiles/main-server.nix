@@ -12,7 +12,7 @@
     # services
     ../modules/nixos/services/homepage/homepage.nix
     ../modules/nixos/services/metrics/server-metrics.nix
-    #../modules/nixos/services/cloud/nextcloud.nix
+    ../modules/nixos/services/cloud/nextcloud.nix
   ];
 
   ## Configuration
@@ -68,9 +68,8 @@
         };
 
         locations."/nextcloud/" = {
-        	return = "200 '<html><body>It works</body></html>'";
-          # proxyPass = "http://127.0.0.1:8009";
-          # proxyWebsockets = true; # needed if you need to use WebSocket
+          proxyPass = "http://127.0.0.1:8009";
+          proxyWebsockets = true; # needed if you need to use WebSocket
           extraConfig =
           	# required when the target is also TLS server with multiple hosts
            "proxy_ssl_server_name on;"
