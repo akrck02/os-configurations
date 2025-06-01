@@ -67,7 +67,7 @@
       hostName = "192.168.50.2";
       config = {
         adminuser = "admin";
-        adminpassFile = "/etc/nixos/password.txt";
+        adminpassFile = "/etc/nixos/nextcloud-password.txt";
         extraTrustedDomains = [
           "192.168.50.2"
           "fuyu"
@@ -76,9 +76,7 @@
     };
 
     services.postgresqlBackup = {
-      enable = true;
       location = "/media/backup/services/nextcloud/database";
-      databases = [ "nextcloud" ];
       # time to start backup in systemd.time format
       startAt = "*-*-* 23:15:00";
     };
