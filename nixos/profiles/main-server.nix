@@ -15,7 +15,7 @@
     # ../modules/nixos/services/cloud/nextcloud.nix
 
     # containers
-    ../modules/containers/portainer.nixos
+    ../modules/containers/portainer.nix
   ];
 
   ## Configuration
