@@ -48,10 +48,10 @@
       allowedTCPPorts = [
       	80
        	443
-        8000
-        9443
-        9000
         25575
+        # 8000
+        # 9443
+        # 9000
       ];
       checkReversePath = "loose";
       trustedInterfaces = [ "enp1s0" ];

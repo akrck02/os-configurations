@@ -45,7 +45,7 @@
           }
           {
             Reposilite = {
-              href = "https://fuyu:8082";
+              href = "https://fuyu/reposilite/";
               description = "Java/Kotlin artifact manager.";
             };
           }
@@ -55,25 +55,25 @@
         Cloud = [
           {
             Nextcloud = {
-              href = "https://fuyu:3333";
+              href = "https://fuyu/nextcloud/";
               description = "Self hosted cloud suite.";
             };
           }
           {
             Immich = {
-              href = "https://fuyu:8082";
+              href = "https://fuyu/immich/";
               description = "Self hosted gallery.";
             };
           }
           {
             Jellyfin = {
-              href = "https://fuyu:8082";
+              href = "https://fuyu/jellyfin/";
               description = "Local media streaming service.";
             };
           }
           {
             Radarr = {
-              href = "https://fuyu:8082";
+              href = "https://fuyu/radarr/";
               description = "Movie collection manager.";
             };
           }
@@ -94,13 +94,13 @@
           }
           {
             Pihole = {
-              href = "https://fuyu:8082";
+              href = "https://fuyu/pihole/";
               description = "DNS resolver.";
             };
           }
           {
             "Uptime kuma" = {
-              href = "https://fuyu:8082";
+              href = "https://fuyu/uptime/";
               description = "Health check for services.";
             };
           }
@@ -110,11 +110,11 @@
         Games = [
           {
             Dockercraft = {
-              href = "https://fuyu:8082";
+              href = "https://fuyu/";
               description = "Minecraft server.";
               widget = {
                 type = "minecraft";
-                url = "udp://akrck02.duckdns.org:25565";
+                url = "udp://akrck02.duckdns.org:25575";
               };
             };
           }
@@ -124,13 +124,13 @@
         System = [
           {
             Grafana = {
-              href = "https://fuyu:8082";
+              href = "https://fuyu/grafana/";
               description = "Stats dashboard.";
             };
           }
           {
             Portainer = {
-              href = "https://fuyu:9443";
+              href = "https://fuyu/portainer/";
               description = "Container manager.";
               widget = {
                 type = "portainer";
@@ -142,7 +142,7 @@
           }
           {
             Syncthing = {
-              href = "https://fuyu:8082";
+              href = "https://fuyu/syncthing/";
               description = "Sync service.";
             };
           }
