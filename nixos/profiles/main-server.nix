@@ -46,7 +46,7 @@
       recommendedTlsSettings = true;
 
       # other Nginx options
-      virtualHosts."192.168.50.2" = {
+      virtualHosts.localhost = {
         enableACME = false;
         forceSSL = false;
         locations."/" = {
