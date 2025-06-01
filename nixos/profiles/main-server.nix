@@ -111,10 +111,10 @@
     };
 
     ## Grafana
-    services.grafana.settings = {
-    	root_url = "http://127.0.0.1/grafana/";
-     	serve_from_sub_path = true;
-    };
+#    services.grafana.settings = {
+#    	root_url = "http://127.0.0.1/grafana/";
+#     	serve_from_sub_path = true;
+#    };
 
      # security.acme = {
      # 	acceptTerms = true;
