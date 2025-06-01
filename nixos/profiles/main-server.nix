@@ -67,22 +67,14 @@
 	        locations."/" = {
 	          proxyPass = "http://127.0.0.1:8082";
 	          proxyWebsockets = true; # needed if you need to use WebSocket
-	          extraConfig =
-	          	# required when the target is also TLS server with multiple hosts
-	           "proxy_ssl_server_name on;"
-	           +
-	           # required when the server wants to use HTTP Authentication
-	           "proxy_pass_header Authorization;";
+	          extraConfig = "proxy_ssl_server_name on;" + # required when the target is also TLS server with multiple hosts
+	           "proxy_pass_header Authorization;";  # required when the server wants to use HTTP Authentication
 	        };
 					locations."/grafana/" = {
 		        proxyPass = "http://127.0.0.1:3000";
 		        proxyWebsockets = true; # needed if you need to use WebSocket
-		        extraConfig =
-	        	# required when the target is also TLS server with multiple hosts
-		         "proxy_ssl_server_name on;"
-		         +
-		        # required when the server wants to use HTTP Authentication
-		         "proxy_pass_header Authorization;";
+          	extraConfig = "proxy_ssl_server_name on;" + # required when the target is also TLS server with multiple hosts
+            "proxy_pass_header Authorization;";  # required when the server wants to use HTTP Authentication
 		      };
 	      };
       };
@@ -108,10 +100,10 @@
     };
 
     ## Grafana
-#    services.grafana.settings = {
-#    	root_url = "http://127.0.0.1/grafana/";
-#     	serve_from_sub_path = true;
-#    };
+    services.grafana.settings = {
+    	root_url = "http://fuyu/grafana/";
+     	serve_from_sub_path = true;
+    };
 
      # security.acme = {
      # 	acceptTerms = true;
