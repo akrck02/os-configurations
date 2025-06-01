@@ -52,8 +52,8 @@
         locations."/" = {
        		return = "200 '<html><body>It works</body></html>'";
           extraConfig = ''
-                default_type text/html;
-              '';
+            default_type text/html;
+          '';
           #proxyPass = "http://127.0.0.1:8082";
           #proxyWebsockets = true; # needed if you need to use WebSocket
           #extraConfig =
@@ -64,6 +64,12 @@
           #  "proxy_pass_header Authorization;";
         };
       };
+    };
+
+    networking.firewall = {
+      allowedTCPPorts = [ 80, 443 ];
+      checkReversePath = "loose";
+      trustedInterfaces = [ "enp1s0" ];
     };
 
     ## Nextcloud
