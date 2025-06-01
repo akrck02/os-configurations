@@ -1,4 +1,4 @@
-{ lib, pkgs ... }:
+{ lib, pkgs, ... }:
 {
 
 	environment.etc."nextcloud-admin-pass".text = "PWD";
