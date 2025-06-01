@@ -42,22 +42,26 @@
     ## Nginx reverse proxy
     services.nginx = {
       enable = true;
-      recommendedProxySettings = true;
-      recommendedTlsSettings = true;
+#      recommendedProxySettings = true;
+#      recommendedTlsSettings = true;
 
       # other Nginx options
       virtualHosts.localhost = {
-        enableACME = false;
-        forceSSL = false;
+#        enableACME = false;
+#        forceSSL = false;
         locations."/" = {
-          proxyPass = "http://127.0.0.1:8082";
-          proxyWebsockets = true; # needed if you need to use WebSocket
-          extraConfig =
+       		return = "200 '<html><body>It works</body></html>'";
+          extraConfig = ''
+                default_type text/html;
+              '';
+          #proxyPass = "http://127.0.0.1:8082";
+          #proxyWebsockets = true; # needed if you need to use WebSocket
+          #extraConfig =
             # required when the target is also TLS server with multiple hosts
-            "proxy_ssl_server_name on;"
-            +
+          #  "proxy_ssl_server_name on;"
+          #  +
             # required when the server wants to use HTTP Authentication
-            "proxy_pass_header Authorization;";
+          #  "proxy_pass_header Authorization;";
         };
       };
     };
