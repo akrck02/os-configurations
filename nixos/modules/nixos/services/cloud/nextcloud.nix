@@ -5,6 +5,7 @@
     ## Nextcloud
     nextcloud = {
       enable = true;
+      package = pkgs.nextcloud31;
       autoUpdateApps.enable = true;
       config = {
         dbtype = "pgsql";
