@@ -12,7 +12,10 @@
     # services
     ../modules/nixos/services/homepage/homepage.nix
     ../modules/nixos/services/metrics/server-metrics.nix
-    ../modules/nixos/services/cloud/nextcloud.nix
+    # ../modules/nixos/services/cloud/nextcloud.nix
+
+    # containers
+    ../modules/containers/portainer.nixos
   ];
 
   ## Configuration
