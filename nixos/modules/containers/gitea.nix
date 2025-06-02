@@ -5,14 +5,15 @@
   # Gitea
   virtualisation.oci-containers.containers = {
 	  "gitea" = {
+	   	backend = "docker";
 	    autoStart = true;
-	    image = "gitea/gitea:latest";
+	    image = "docker.io/gitea/gitea:latest";
 	    environment = {
 	      USER_UID = "1000";
 	      USER_GID = "1000";
 	    };
 	    volumes = [
-	      "/media/Containers/Gitea:/data"
+	      "/media/services/development/gtea:/data"
 	      "/etc/timezone:/etc/timezone:ro"
 	      "/etc/localtime:/etc/localtime:ro"
 	    ];
