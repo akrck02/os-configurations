@@ -51,13 +51,13 @@
       	80
        	443
         25575
+        3001
       ];
       checkReversePath = "loose";
       trustedInterfaces = [ "enp1s0" ];
     };
 
     ## Nginx reverse proxy
-
     # security.acme = {
     # 	acceptTerms = true;
     # 	certs.defaults.email = "akrck02@gmail.com";
@@ -65,6 +65,7 @@
 
     services.nginx = {
       enable = true;
+
 
       # other Nginx options
       virtualHosts = {
