@@ -17,7 +17,7 @@
 
          environment = {
          	 JAVA_OPTS="-Xmx128M";
-           REPOSILITE_OPTS="--token admin:secret"
+           REPOSILITE_OPTS="--token admin:secret";
          };
 	     };
 	   };
