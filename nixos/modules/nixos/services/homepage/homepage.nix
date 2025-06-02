@@ -172,6 +172,16 @@
           label = "storage";
           disk = [ "/" ];
         };
+
+        resources = {
+          label = "services";
+          disk = [ "/media/services" ];
+        };
+
+        resources = {
+          label = "backup";
+          disk = [ "/media/backup" ];
+        };
       }
     ];
 
