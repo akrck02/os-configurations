@@ -19,6 +19,7 @@
     # containers
     ../modules/containers/portainer.nix
     ../modules/containers/dockercraft.nix
+    ../modules/containers/gitea.nix
   ];
 
   ## Configuration
