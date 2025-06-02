@@ -15,11 +15,12 @@
     ../modules/nixos/services/metrics/kuma.nix
     # ../modules/nixos/services/cloud/nextcloud.nix
 
-
     # containers
     ../modules/containers/portainer.nix
     ../modules/containers/dockercraft.nix
     ../modules/containers/gitea.nix
+    ../modules/conteiners/reposilite.nix
+    ../modules/conteiners/duckdns.nix
   ];
 
   ## Configuration
