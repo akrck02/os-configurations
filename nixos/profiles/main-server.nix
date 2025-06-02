@@ -90,7 +90,7 @@
 						"proxy_pass_header Authorization;";  # required when the server wants to use HTTP Authentication
 			    };
 					locations."/uptime/" = {
-						proxyPass = "http://127.0.0.1:3001$uri";
+						proxyPass = "http://127.0.0.1:3001$request_uri";
 					  proxyWebsockets = true; # needed if you need to use WebSocket
 						extraConfig = "rewrite ^ $request_uri;" +
 						"rewrite ^/(uptime($|/))?(.*) /$3 break;";
