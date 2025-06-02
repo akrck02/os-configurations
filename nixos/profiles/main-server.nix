@@ -19,8 +19,9 @@
     ../modules/containers/portainer.nix
     ../modules/containers/dockercraft.nix
     ../modules/containers/gitea.nix
-    ../modules/conteiners/reposilite.nix
-    ../modules/conteiners/duckdns.nix
+    ../modules/containers/reposilite.nix
+    # ../modules/containers/duckdns.nix
+    # ../modules/containers/mewbot.nix
   ];
 
   ## Configuration
