@@ -14,13 +14,13 @@
 		      USER_GID = "1000";
 		    };
 		    volumes = [
-		      "/media/services/development/gtea:/data"
+		      "/media/services/development/gitea:/data"
 		      "/etc/timezone:/etc/timezone:ro"
 		      "/etc/localtime:/etc/localtime:ro"
 		    ];
 		    ports = [
-		      "3000:3000"
-		      "222:22"
+		      "0.0.0.0:3000:3000"
+		      "0.0.0.0.0:222:22"
 		    ];
 		  };
 	  };
