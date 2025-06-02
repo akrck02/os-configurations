@@ -12,7 +12,9 @@
     # services
     ../modules/nixos/services/homepage/homepage.nix
     ../modules/nixos/services/metrics/server-metrics.nix
+    ../modules/nixos/services/metrics/kuma.nix
     # ../modules/nixos/services/cloud/nextcloud.nix
+
 
     # containers
     ../modules/containers/portainer.nix
@@ -49,9 +51,6 @@
       	80
        	443
         25575
-        # 8000
-        # 9443
-        # 9000
       ];
       checkReversePath = "loose";
       trustedInterfaces = [ "enp1s0" ];
@@ -88,6 +87,10 @@
 					  proxyWebsockets = true; # needed if you need to use WebSocket
 						extraConfig = "proxy_ssl_server_name on;" + # required when the target is also TLS server with multiple hosts
 						"proxy_pass_header Authorization;";  # required when the server wants to use HTTP Authentication
+			    };
+					locations."/uptime-kuma/" = {
+					  proxyPass = "http://127.0.0.1:3001";
+					  proxyWebsockets = true; # needed if you need to use WebSocket
 			    };
 	      };
       };
