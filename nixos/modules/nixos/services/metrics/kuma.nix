@@ -5,5 +5,5 @@
    	settings = {
     	"UPTIME_KUMA_HOST" = "fuyu/uptime";
     };
-  }
+  };
 }
