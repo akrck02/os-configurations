@@ -88,7 +88,7 @@
 						extraConfig = "proxy_ssl_server_name on;" + # required when the target is also TLS server with multiple hosts
 						"proxy_pass_header Authorization;";  # required when the server wants to use HTTP Authentication
 			    };
-					locations."/uptime-kuma/" = {
+					locations."/uptime/" = {
 					  proxyPass = "http://127.0.0.1:3001";
 					  proxyWebsockets = true; # needed if you need to use WebSocket
 			    };
