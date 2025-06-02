@@ -66,7 +66,6 @@
     services.nginx = {
       enable = true;
 
-
       # other Nginx options
       virtualHosts = {
        	localhost = {
