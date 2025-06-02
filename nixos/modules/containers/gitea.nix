@@ -4,8 +4,9 @@
 
   # Gitea
   virtualisation.oci-containers.containers = {
-	  "gitea" = {
-	   	backend = "docker";
+  	backend = "docker";
+
+   	"gitea" = {
 	    autoStart = true;
 	    image = "docker.io/gitea/gitea:latest";
 	    environment = {
