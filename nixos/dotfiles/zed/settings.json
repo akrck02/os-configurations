@@ -46,6 +46,9 @@
   "chat_panel": {
     "button": "never"
   },
+  "agent": {
+    "button": false
+  },
   "show_call_status_icon": false,
 
   // General format
