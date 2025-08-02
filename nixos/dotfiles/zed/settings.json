@@ -1,0 +1,109 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `zed: Open Default Settings` command
+// from the command palette
+{
+  // Telemetry
+  "telemetry": {
+    "diagnostics": true,
+    "metrics": false
+  },
+
+  // UI
+  "ui_font_size": 16,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 16,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "One Dark Pro"
+  },
+
+  // Layout
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": false
+  },
+  "project_panel": {
+    "dock": "left",
+    "default_width": 100,
+    "indent_size": 20
+  },
+  "terminal": {
+    "alternate_scroll": "on",
+    "cursor_shape": "underline"
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "notification_panel": {
+    "button": false
+  },
+  "chat_panel": {
+    "button": "never"
+  },
+  "show_call_status_icon": false,
+
+  // General format
+  "tabs": {
+    "file_icons": true,
+    "git_status": false
+  },
+  "hard_tabs": true,
+
+  // Languages
+  "languages": {
+    "Go": {
+      "format_on_save": "on"
+    },
+    "TypeScript": {
+      "format_on_save": "on",
+      "language_servers": ["tsgo", "vtsls"],
+      "prettier": { "allowed": true }
+    }
+  },
+
+  // Formatter
+  "formatter": "prettier",
+  "prettier": {
+    "allowed": true,
+    "printWidth": 80,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "quoteProps": "as-needed",
+    "jsxSingleQuote": false,
+    "trailingComma": "none",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "arrowParens": "always",
+    "requirePragma": false,
+    "insertPragma": false,
+    "proseWrap": "preserve",
+    "htmlWhitespaceSensitivity": "css",
+    "endOfLine": "lf",
+    "overrides": [
+      {
+        "files": ["*.json"],
+        "options": {
+          "singleQuote": false
+        }
+      }
+    ]
+  },
+
+  // Extensions
+  "auto_install_extensions": {
+    "Nix": true,
+    "One Dark Pro": true,
+    "GDScript": true,
+    "HTML": true,
+    "Kotlin": true,
+    "Dockerfile": true
+  }
+}
