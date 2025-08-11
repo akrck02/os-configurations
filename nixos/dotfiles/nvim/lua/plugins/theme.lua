@@ -18,7 +18,7 @@ return {
         term_colors = true, -- Change terminal color as per the selected theme style
         opts = {},
         lualine = {
-          transparent = false, -- lualine center bar transparency
+          transparent = true, -- lualine center bar transparency
         },
       })
       -- Enable theme
