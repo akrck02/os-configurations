@@ -17,5 +17,10 @@
 		"bindings": {
 			// "j k": ["workspace::SendKeystrokes", "escape"]
 		}
-	}
+	},
+ {
+   "bindings": {
+     "alt-f1": "debugger::Start"
+   }
+ }
 ]
