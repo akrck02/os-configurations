@@ -25,19 +25,12 @@
   };
 
   # Outputs of the flake
-  outputs =
-    { self, nixpkgs, sops-nix, ... }@inputs:
+  outputs = { self, nixpkgs, sops-nix, ... }@inputs:
     let
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       pkgs = import nixpkgs { inherit system; };
     in {
-
-    	# Configure SOPS for secrets
-    	imports = [ inputs.sops-nix.nixosModules.sops ];
-      sops-nix.defaultSopsFile = ./secrets/secrets.yaml;
-      sops-nix.defaultSopsFormat = "yaml";
-     	sops-nix.age.keyFile = "/etc/nixos/secrets/sops/age/keys.txt";
 
       # Workstations
       nixosConfigurations.aki = pkgs.lib.nixosSystem {
