@@ -87,7 +87,7 @@
           ./hosts/servers/natsu/natsu.nix
           sops-nix.nixosModules.sops
           inputs.home-manager.nixosModules.default
-          home-manager.nixosModules.home-manager {..
+          home-manager.nixosModules.home-manager {
             home-manager.sharedModules = [ sops-nix.homeManagerModules.sops ];
           }
         ];
