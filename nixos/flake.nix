@@ -29,7 +29,7 @@
     	imports = [ inputs.sops-nix.nixosModules.sops ];
       sops.defaultSopsFile = ./secrets/secrets.yaml;
       sops.defaultSopsFormat = "yaml";
-     	sops.age.keyFile = "/etc/nixos/secrets/sops/age/keys.txt"
+     	sops.age.keyFile = "/etc/nixos/secrets/sops/age/keys.txt";
 
       nixosConfigurations = {
 
