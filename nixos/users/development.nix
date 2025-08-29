@@ -3,6 +3,9 @@
    ## Modules to import
    imports = [
 
+  	# External imports
+   	inputs.sops-nix.nixosModules.sops
+
      ## Development apps
      ../modules/home-manager/development/code/intellij.nix
      ../modules/home-manager/development/code/android-studio.nix

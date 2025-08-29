@@ -25,17 +25,11 @@
     { self, nixpkgs, ... }@inputs:
     {
 
-    	imports = [
-        inputs.sops-nix.nixosModules.sops
-      ];
-
+    	# Configure SOPS for secrets
+    	imports = [ inputs.sops-nix.nixosModules.sops ];
       sops.defaultSopsFile = ./secrets/secrets.yaml;
       sops.defaultSopsFormat = "yaml";
-
-      sops.secrets.example-key = { };
-      sops.secrets."myservice/my_subdir/my_secret" = {
-        owner = "sometestservice";
-      };
+     	sops.age.keyFile = "/etc/nixos/secrets/sops/age/keys.txt"
 
       nixosConfigurations = {
 

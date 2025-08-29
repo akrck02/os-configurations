@@ -29,7 +29,7 @@
     users.users.development = {
       isNormalUser = true;
       home = "/home/development";
-      initialPassword = "12345";
+      initialPassword = sops.secrets."users/development/password";
       description = "development";
       shell = pkgs.zsh;
       createHome = true;
@@ -46,7 +46,7 @@
     users.users.work = {
       isNormalUser = true;
       home = "/home/work";
-      initialPassword = "12345";
+      initialPassword = sops.secrets."users/work/password";
       shell = pkgs.zsh;
       description = "work";
       createHome = true;
@@ -60,20 +60,20 @@
     home-manager.users.work = import ../users/work.nix;
 
     # Media user
-    users.users.media = {
-      isNormalUser = true;
-      home = "/home/media";
-      initialPassword = "12345";
-      shell = pkgs.zsh;
-      description = "media";
-      createHome = true;
-      extraGroups = [
-        "networkmanager"
-        "wheel"
-      ];
-      openssh.authorizedKeys.keys = [ ];
-    };
-    home-manager.users.media = import ../users/media.nix;
+    # users.users.media = {
+    #   isNormalUser = true;
+    #   home = "/home/media";
+    #   initialPassword = "12345";
+    #   shell = pkgs.zsh;
+    #   description = "media";
+    #   createHome = true;
+    #   extraGroups = [
+    #     "networkmanager"
+    #     "wheel"
+    #   ];
+    #   openssh.authorizedKeys.keys = [ ];
+    # };
+    # home-manager.users.media = import ../users/media.nix;
 
   };
 }

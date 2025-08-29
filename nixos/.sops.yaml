@@ -1,0 +1,7 @@
+keys:
+  - &haruhi age1ljspsscanvwsf43uhqtvuyha4lzqcc5x3mw0tdac59ewzf6yu4wqfwfztc
+creation_rules:
+  - path_regex: secrets/secrets.yaml$
+    key_groups:
+      - age:
+          - *haruhi
