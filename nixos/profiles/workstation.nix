@@ -3,8 +3,6 @@
 
   ## Modules to import
   imports = [
- 		# External imports
-  	inputs.sops-nix.nixosModules.sops
 
     ../modules/nixos/desktop/gnome.nix
     ../modules/nixos/languages/english-es.nix
