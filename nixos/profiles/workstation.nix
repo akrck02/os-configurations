@@ -1,4 +1,4 @@
-{ pkgs, inputs, sops-nix, ... }:
+{ pkgs, inputs, config, ... }:
 {
 
   ## Modules to import
