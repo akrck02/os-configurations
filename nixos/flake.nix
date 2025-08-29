@@ -47,7 +47,7 @@
           ./hosts/workstations/aki/aki.nix
           sops-nix.nixosModules.sops
           inputs.home-manager.nixosModules.default
-          home-manager.nixosModules.home-manager {
+          inputs.home-manager.nixosModules.home-manager {
             home-manager.sharedModules = [ sops-nix.homeManagerModules.sops ];
           }
         ];
@@ -60,7 +60,7 @@
           ./hosts/workstations/haruhi/default.nix
           sops-nix.nixosModules.sops
           inputs.home-manager.nixosModules.default
-          home-manager.nixosModules.home-manager {
+          inputs.home-manager.nixosModules.home-manager {
             home-manager.sharedModules = [ sops-nix.homeManagerModules.sops ];
           }
         ];
@@ -74,7 +74,7 @@
           ./hosts/servers/fuyu/fuyu.nix
           sops-nix.nixosModules.sops
           inputs.home-manager.nixosModules.default
-          home-manager.nixosModules.home-manager {
+          inputs.home-manager.nixosModules.home-manager {
             home-manager.sharedModules = [ sops-nix.homeManagerModules.sops ];
           }
         ];
@@ -87,7 +87,7 @@
           ./hosts/servers/natsu/natsu.nix
           sops-nix.nixosModules.sops
           inputs.home-manager.nixosModules.default
-          home-manager.nixosModules.home-manager {
+          inputs.home-manager.nixosModules.home-manager {
             home-manager.sharedModules = [ sops-nix.homeManagerModules.sops ];
           }
         ];
