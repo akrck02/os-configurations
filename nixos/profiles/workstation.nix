@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, sops-nix, ... }:
 {
 
   ## Modules to import
@@ -32,7 +32,7 @@
     users.users.development = {
       isNormalUser = true;
       home = "/home/development";
-      initialPassword = sops.secrets."users/development/password";
+      initialPassword = sops-nix.secrets."users/development/password";
       description = "development";
       shell = pkgs.zsh;
       createHome = true;
@@ -49,7 +49,7 @@
     users.users.work = {
       isNormalUser = true;
       home = "/home/work";
-      initialPassword = sops.secrets."users/work/password";
+      initialPassword = sops-nix.secrets."users/work/password";
       shell = pkgs.zsh;
       description = "work";
       createHome = true;
