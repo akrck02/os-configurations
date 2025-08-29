@@ -20,9 +20,6 @@
     home-manager.useGlobalPkgs = true;
     home-manager.extraSpecialArgs = { inherit inputs; };
     home-manager.backupFileExtension = "back";
-    home-manager.sharedModules = [
-      sops-nix.homeManagerModules.sops
-    ];
 
     environment.systemPackages = with pkgs; [
       papirus-icon-theme
