@@ -9,6 +9,9 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    # SOPS
+    sops-nix.url = "github:Mic92/sops-nix";
+
     # Home manager
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
@@ -18,6 +21,7 @@
     # NOTE: if you experience a build failure with Zen, the first thing to check is to remove this line!
     zen-browser.url = "github:youwen5/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+
   };
 
   # Outputs of the flake
