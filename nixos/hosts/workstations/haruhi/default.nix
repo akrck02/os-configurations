@@ -11,9 +11,6 @@
 
      # You can also split up your configuration and import pieces of it here:
     ../../../users/akrck02/akrck02.nix
-
-
    ];
-
 
 }
