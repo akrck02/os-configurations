@@ -26,14 +26,14 @@
 
   # Outputs of the flake
   outputs =
-    { self, nixpkgs, sops, ... }@inputs:
+    { self, nixpkgs, sops-nix, ... }@inputs:
     {
 
     	# Configure SOPS for secrets
     	imports = [ inputs.sops-nix.nixosModules.sops ];
-      sops.defaultSopsFile = ./secrets/secrets.yaml;
-      sops.defaultSopsFormat = "yaml";
-     	sops.age.keyFile = "/etc/nixos/secrets/sops/age/keys.txt";
+      sops-nix.defaultSopsFile = ./secrets/secrets.yaml;
+      sops-nix.defaultSopsFormat = "yaml";
+     	sops-nix.age.keyFile = "/etc/nixos/secrets/sops/age/keys.txt";
 
       nixosConfigurations = {
 
@@ -42,7 +42,7 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
-          	sops.nixosModules.sops
+          	sops-nix.nixosModules.sops
             ./hosts/workstations/aki/aki.nix
             inputs.home-manager.nixosModules.default
           ];
@@ -52,7 +52,7 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
-          	sops.nixosModules.sops
+          	sops-nix.nixosModules.sops
             ./hosts/workstations/haruhi/default.nix
             inputs.home-manager.nixosModules.default
           ];
@@ -63,7 +63,7 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
-         		sops.nixosModules.sops
+         		sops-nix.nixosModules.sops
             ./hosts/servers/fuyu/fuyu.nix
             inputs.home-manager.nixosModules.default
           ];
@@ -73,7 +73,7 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
-         		sops.nixosModules.sops
+         		sops-nix.nixosModules.sops
             ./hosts/servers/natsu/natsu.nix
             inputs.home-manager.nixosModules.default
           ];
