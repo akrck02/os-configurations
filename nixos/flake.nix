@@ -38,7 +38,7 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
-           	inputs.sops-nix.nixosModules.sops
+           	sops-nix.nixosModules.sops
             ./hosts/workstations/aki/aki.nix
             inputs.home-manager.nixosModules.default
           ];
@@ -48,7 +48,7 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
-          	inputs.sops-nix.nixosModules.sops
+          	sops-nix.nixosModules.sops
             ./hosts/workstations/haruhi/default.nix
             inputs.home-manager.nixosModules.default
           ];
@@ -59,7 +59,7 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
-           	inputs.sops-nix.nixosModules.sops
+           	sops-nix.nixosModules.sops
             ./hosts/servers/fuyu/fuyu.nix
             inputs.home-manager.nixosModules.default
           ];
@@ -69,7 +69,7 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
-           	inputs.sops-nix.nixosModules.sops
+           	sops-nix.nixosModules.sops
             ./hosts/servers/natsu/natsu.nix
             inputs.home-manager.nixosModules.default
           ];
