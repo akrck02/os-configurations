@@ -20,6 +20,9 @@
     home-manager.useGlobalPkgs = true;
     home-manager.extraSpecialArgs = { inherit inputs; };
     home-manager.backupFileExtension = "back";
+    home-manager.sharedModules = [
+      sops-nix.homeManagerModules.sops
+    ];
 
     environment.systemPackages = with pkgs; [
       papirus-icon-theme
@@ -30,7 +33,7 @@
     users.users.development = {
       isNormalUser = true;
       home = "/home/development";
-      initialPassword = sops-nix.secrets."users/development/password";
+      initialPassword = config.sops.nix.secrets."users/development/password";
       description = "development";
       shell = pkgs.zsh;
       createHome = true;
@@ -47,7 +50,7 @@
     users.users.work = {
       isNormalUser = true;
       home = "/home/work";
-      initialPassword = sops-nix.secrets."users/work/password";
+      initialPassword = config.sops.nix.secrets."users/work/password";
       shell = pkgs.zsh;
       description = "work";
       createHome = true;
