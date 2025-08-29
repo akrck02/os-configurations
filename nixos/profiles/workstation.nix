@@ -33,7 +33,7 @@
     users.users.development = {
       isNormalUser = true;
       home = "/home/development";
-      initialPassword = config.sops.nix.secrets."users/development/password";
+      initialPassword = config.sops.secrets."users/development/password";
       description = "development";
       shell = pkgs.zsh;
       createHome = true;
@@ -50,7 +50,7 @@
     users.users.work = {
       isNormalUser = true;
       home = "/home/work";
-      initialPassword = config.sops.nix.secrets."users/work/password";
+      initialPassword = config.sops.secrets."users/work/password";
       shell = pkgs.zsh;
       description = "work";
       createHome = true;
