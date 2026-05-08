@@ -6,7 +6,8 @@
 		services.thermald.enable = true;
 		powerManagement.enable = true;
 		services.logind.lidSwitch = "ignore";
-		services.logind.extraConfig = "HandleLidSwitch=ignore";
+		services.logind.lidSwitchExternalPower = "ignore";
+		services.logind.lidSwitchDocked = "ignore";
 		services.tlp = {
 		  enable = true;
 		  settings = {
