@@ -19,11 +19,11 @@
 	  environment.systemPackages = with pkgs; [];
 
 		# Development user
-    users.users.natsu = {
+    users.users.akrck02 = {
         isNormalUser = true;
-        home = "/home/natsu";
+        home = "/home/akrck02";
         initialPassword = "12345";
-        description = "Admin user for natsu server";
+        description = "Admin user for server";
         shell = pkgs.zsh;
         createHome = true;
         extraGroups = [ "networkmanager" "wheel" "docker" ];
