@@ -7,6 +7,11 @@
     ../modules/nixos/networking/networking.nix
     ../modules/nixos/containers/docker.nix
     ../modules/nixos/development/language.servers.nix
+
+    # containers
+    ../modules/containers/gitea.nix
+    ../modules/containers/reposilite.nix
+
   ];
 
   ## Configuration
