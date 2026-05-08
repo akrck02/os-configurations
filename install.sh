@@ -23,6 +23,11 @@ do
             echo "Installing nixos on host $lng"
             nixos-rebuild switch --flake /etc/nixos/#haruhi
             break ;;
+        "haruhi")
+           	sh ./deploy.sh
+            echo "Installing nixos on host $lng"
+            nixos-rebuild switch --flake /etc/nixos/#moon
+            break ;;
         "Quit")
            echo "Have a nice day."
            break;;

@@ -64,6 +64,15 @@
             inputs.home-manager.nixosModules.default
           ];
         };
+
+        moon = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/servers/moon/moon.nix
+            inputs.home-manager.nixosModules.default
+          ];
+        };
       };
     };
 }

@@ -19,9 +19,9 @@
 	  environment.systemPackages = with pkgs; [];
 
 		# Development user
-    users.users.akrck02 = {
+    users.users.low = {
         isNormalUser = true;
-        home = "/home/akrck02";
+        home = "/home/low";
         initialPassword = "12345";
         description = "Admin user for server";
         shell = pkgs.zsh;
@@ -29,7 +29,7 @@
         extraGroups = [ "networkmanager" "wheel" "docker" ];
         openssh.authorizedKeys.keys = [];
     };
-    home-manager.users.natsu = import ../users/natsu.nix;
+    home-manager.users.low = import ../users/low.nix;
 
   };
 }
