@@ -1,6 +1,6 @@
 PS3="Select your host please: "
 
-select lng in aki haruhi fuyu natsu Quit
+select lng in aki haruhi fuyu moon Quit
 do
     case $lng in
         "aki")
