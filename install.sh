@@ -23,7 +23,7 @@ do
             echo "Installing nixos on host $lng"
             nixos-rebuild switch --flake /etc/nixos/#haruhi
             break ;;
-        "haruhi")
+        "moon")
            	sh ./deploy.sh
             echo "Installing nixos on host $lng"
             nixos-rebuild switch --flake /etc/nixos/#moon
