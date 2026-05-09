@@ -1,6 +1,6 @@
 PS3="Select your host please: "
 
-select lng in aki haruhi fuyu natsu Quit
+select lng in aki haruhi fuyu moon Quit
 do
     case $lng in
         "aki")
@@ -22,6 +22,11 @@ do
            	sh ./deploy.sh
             echo "Installing nixos on host $lng"
             nixos-rebuild switch --flake /etc/nixos/#haruhi
+            break ;;
+        "moon")
+           	sh ./deploy.sh
+            echo "Installing nixos on host $lng"
+            nixos-rebuild switch --flake /etc/nixos/#moon
             break ;;
         "Quit")
            echo "Have a nice day."

@@ -7,6 +7,11 @@
     ../modules/nixos/networking/networking.nix
     ../modules/nixos/containers/docker.nix
     ../modules/nixos/development/language.servers.nix
+
+    # containers
+    ../modules/containers/gitea.nix
+    ../modules/containers/reposilite.nix
+
   ];
 
   ## Configuration
@@ -19,17 +24,17 @@
 	  environment.systemPackages = with pkgs; [];
 
 		# Development user
-    users.users.natsu = {
+    users.users.low = {
         isNormalUser = true;
-        home = "/home/natsu";
+        home = "/home/low";
         initialPassword = "12345";
-        description = "Admin user for natsu server";
+        description = "Admin user for server";
         shell = pkgs.zsh;
         createHome = true;
         extraGroups = [ "networkmanager" "wheel" "docker" ];
         openssh.authorizedKeys.keys = [];
     };
-    home-manager.users.natsu = import ../users/natsu.nix;
+    home-manager.users.low = import ../users/low.nix;
 
   };
 }

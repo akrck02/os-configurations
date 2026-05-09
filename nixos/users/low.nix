@@ -9,7 +9,6 @@
 
     ../modules/home-manager/development/languages/python313.nix
     ../modules/home-manager/development/languages/typescript.nix
-
   ];
 
   config = {

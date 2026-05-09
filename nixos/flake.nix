@@ -73,12 +73,13 @@
         ];
       };
 
-      nixosConfigurations.natsu = nixpkgs.lib.nixosSystem {
-    		inherit system;
-      	inherit specialArgs;
+      # Moon
+      moon = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
-          ./hosts/servers/natsu/natsu.nix
-          sops-nix.nixosModules.sops
+          ./hosts/servers/moon/moon.nix
+           sops-nix.nixosModules.sops
           inputs.home-manager.nixosModules.default
           inputs.home-manager.nixosModules.home-manager {
             home-manager.sharedModules = [ sops-nix.homeManagerModules.sops ];
@@ -86,4 +87,5 @@
         ];
       };
     };
+  };
 }
