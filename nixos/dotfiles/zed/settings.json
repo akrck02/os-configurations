@@ -13,9 +13,14 @@
     "metrics": false
   },
 
+  // Behaviour
+  "restore_on_startup": "last_workspace",
+  "base_keymap": "JetBrains",
+
   // UI
   "ui_font_size": 16,
   "buffer_font_family": "JetBrainsMono Nerd Font",
+  //"buffer_font_family": "GohuFont 11 Nerd Font Mono",
   "buffer_font_size": 16,
   "theme": {
     "mode": "system",
@@ -30,7 +35,7 @@
   },
   "project_panel": {
     "dock": "left",
-    "default_width": 100,
+    "default_width": 300,
     "indent_size": 20
   },
   "terminal": {
@@ -61,12 +66,19 @@
   // Languages
   "languages": {
     "Go": {
-      "format_on_save": "on"
+      "format_on_save": "on",
+      "formatter": "language_server",
+      "prettier": { "allowed": false }
     },
     "TypeScript": {
       "format_on_save": "on",
       "language_servers": ["tsgo", "vtsls"],
       "prettier": { "allowed": true }
+    },
+    "SQL": {
+      "format_on_save": "on",
+      "formatter": "language_server",
+      "prettier": { "allowed": false }
     }
   },
 
@@ -105,6 +117,7 @@
     "Nix": true,
     "One Dark Pro": true,
     "GDScript": true,
+    "SQL": true,
     "HTML": true,
     "Kotlin": true,
     "Dockerfile": true
