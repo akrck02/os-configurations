@@ -9,6 +9,9 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    # SOPS
+    sops-nix.url = "github:Mic92/sops-nix";
+
     # Home manager
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
@@ -18,61 +21,71 @@
     # NOTE: if you experience a build failure with Zen, the first thing to check is to remove this line!
     zen-browser.url = "github:youwen5/zen-browser-flake";
     zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+
   };
 
   # Outputs of the flake
-  outputs =
-    { self, nixpkgs, ... }@inputs:
-    {
+  outputs = { self, nixpkgs, sops-nix, ... }@inputs:
+    let
+      system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
+      pkgs = import nixpkgs { inherit system; };
+    in {
 
-      nixosConfigurations = {
+      # Workstations
+      nixosConfigurations.aki = pkgs.lib.nixosSystem {
+      	inherit system;
+        inherit specialArgs;
+        modules = [
+          ./hosts/workstations/aki/aki.nix
+          sops-nix.nixosModules.sops
+          inputs.home-manager.nixosModules.default
+          inputs.home-manager.nixosModules.home-manager {
+            home-manager.sharedModules = [ sops-nix.homeManagerModules.sops ];
+          }
+        ];
+      };
 
-        # Workstations
-        aki = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/workstations/aki/aki.nix
-            inputs.home-manager.nixosModules.default
-          ];
-        };
+      nixosConfigurations.haruhi = nixpkgs.lib.nixosSystem {
+     		inherit system;
+       	inherit specialArgs;
+        modules = [
+          ./hosts/workstations/haruhi/default.nix
+          sops-nix.nixosModules.sops
+          inputs.home-manager.nixosModules.default
+          inputs.home-manager.nixosModules.home-manager {
+            home-manager.sharedModules = [ sops-nix.homeManagerModules.sops ];
+          }
+        ];
+      };
 
-        haruhi = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
-            # ./hosts/workstations/haruhi/default.nix
-            inputs.home-manager.nixosModules.default
-          ];
-        };
+       # Servers
+      nixosConfigurations.fuyu = nixpkgs.lib.nixosSystem {
+    		inherit system;
+      	inherit specialArgs;
+        modules = [
+          ./hosts/servers/fuyu/fuyu.nix
+          sops-nix.nixosModules.sops
+          inputs.home-manager.nixosModules.default
+          inputs.home-manager.nixosModules.home-manager {
+            home-manager.sharedModules = [ sops-nix.homeManagerModules.sops ];
+          }
+        ];
+      };
 
-        # Servers
-        fuyu = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/servers/fuyu/fuyu.nix
-            inputs.home-manager.nixosModules.default
-          ];
-        };
-
-        natsu = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/servers/natsu/natsu.nix
-            inputs.home-manager.nixosModules.default
-          ];
-        };
-
-        moon = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/servers/moon/moon.nix
-            inputs.home-manager.nixosModules.default
-          ];
-        };
+      # Moon
+      moon = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/servers/moon/moon.nix
+           sops-nix.nixosModules.sops
+          inputs.home-manager.nixosModules.default
+          inputs.home-manager.nixosModules.home-manager {
+            home-manager.sharedModules = [ sops-nix.homeManagerModules.sops ];
+          }
+        ];
       };
     };
+  };
 }

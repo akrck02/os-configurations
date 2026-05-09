@@ -2,7 +2,6 @@
   config = {
     home.packages = with pkgs; [
       spotify
-      spot
     ];
   };
 }

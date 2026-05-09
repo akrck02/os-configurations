@@ -1,8 +1,6 @@
 # Slimbook executive 16 custom configuration
 { pkgs, lib, config, inputs, home-manager, ...} : {
 
-
-
   ## Configuration
   config = {
 
@@ -27,6 +25,15 @@
 
     # Exclude xterm
     services.xserver.excludePackages = [pkgs.xterm];
+
+    # Sops
+    sops = {
+	    age.keyFile = "/etc/nixos/secrets/sops/age/keys.txt";
+
+	    defaultSopsFile = ./secrets/secrets.yaml;
+	    defaultSymlinkPath = "/run/user/1000/secrets";
+	    defaultSecretsMountPoint = "/run/user/1000/secrets.d";
+    }
 
   };
 

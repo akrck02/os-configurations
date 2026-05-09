@@ -3,6 +3,10 @@
 
   ## Modules to import
   imports = [
+  	# External imports
+   	inputs.sops-nix.nixosModules.sops
+
+   	# Internal imports
     ../modules/nixos/languages/english-es.nix
     ../modules/nixos/cli/cli.nix
     ../modules/nixos/networking/networking.nix
@@ -35,7 +39,7 @@
     users.users.fuyu = {
       isNormalUser = true;
       home = "/home/fuyu";
-      initialPassword = "12345";
+      initialPassword = sops.secrets."users/fuyu/password";
       description = "Admin user for fuyu server";
       shell = pkgs.zsh;
       createHome = true;
