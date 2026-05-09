@@ -61,6 +61,7 @@
 
        # Servers
       nixosConfigurations.fuyu = nixpkgs.lib.nixosSystem {
+
     		inherit system;
       	inherit specialArgs;
         modules = [
@@ -86,6 +87,5 @@
           }
         ];
       };
-    };
   };
 }
