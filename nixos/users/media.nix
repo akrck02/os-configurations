@@ -26,7 +26,7 @@
 
     # The state version is required and should stay at the version you
     # originally installed.
-    home.stateVersion = "24.11";
+    home.stateVersion = "25.11";
 
     ## Basic dnconf configuration
     dconf.settings = {
