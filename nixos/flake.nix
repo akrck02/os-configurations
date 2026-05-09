@@ -42,7 +42,7 @@
           inputs.home-manager.nixosModules.default
           inputs.home-manager.nixosModules.home-manager {
             home-manager.sharedModules = [ sops-nix.homeManagerModules.sops ];
-          }
+          };
         ];
       };
 
@@ -55,7 +55,7 @@
           inputs.home-manager.nixosModules.default
           inputs.home-manager.nixosModules.home-manager {
             home-manager.sharedModules = [ sops-nix.homeManagerModules.sops ];
-          }
+          };
         ];
       };
 
@@ -70,7 +70,7 @@
           inputs.home-manager.nixosModules.default
           inputs.home-manager.nixosModules.home-manager {
             home-manager.sharedModules = [ sops-nix.homeManagerModules.sops ];
-          }
+          };
         ];
       };
 
@@ -85,9 +85,8 @@
           inputs.home-manager.nixosModules.default
           inputs.home-manager.nixosModules.home-manager {
             home-manager.sharedModules = [ sops-nix.homeManagerModules.sops ];
-          }
+          };
         ];
-      }
-
+      };
     };
 }
