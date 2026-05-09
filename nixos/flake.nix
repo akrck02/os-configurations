@@ -76,16 +76,18 @@
 
       # Moon
       moon = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+
+    		inherit system;
+      	inherit specialArgs;
         modules = [
           ./hosts/servers/moon/moon.nix
-           sops-nix.nixosModules.sops
+          sops-nix.nixosModules.sops
           inputs.home-manager.nixosModules.default
           inputs.home-manager.nixosModules.home-manager {
             home-manager.sharedModules = [ sops-nix.homeManagerModules.sops ];
           }
         ];
       };
-  };
+      
+    };
 }
